@@ -1,0 +1,3007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What to bring — xMEC alumni meet</title>
+<meta property="og:title" content="What to bring — per-person load-out, Sept 12">
+<meta property="og:description" content="11 cards · find yours · what's in your car Saturday">
+<meta property="og:image" content="https://cherian.github.io/xmec-meet26-supplies/og-roles.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cherian.github.io/xmec-meet26-supplies/roles.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+        /* ============================================
+           COLOR TOKENS
+           ============================================
+           Two-level architecture: primitives → semantics.
+           Canonical source of truth for every color in this template.
+           Syntax highlighting, gradient endpoints, and print overrides
+           are contextual — intentionally excluded from the token set.
+           ============================================ */
+        :root {
+            /* ── Primitives: Warm Neutrals ── */
+            --cream-50:  #f5f3f1;
+            --cream-100: #f3f0ed;
+            --cream-200: #e8e6e3;
+            --cream-300: #e0ddd9;
+            --cream-400: #d8d4cf;
+            --neutral-500: #ccc;
+            --neutral-400: #ddd;
+            --white:     #ffffff;
+
+            /* ── Primitives: Gray Scale ── */
+            --gray-950:  #222;
+            --gray-900:  #333;
+            --gray-800:  #444;
+            --gray-700:  #555;
+            --gray-600:  #666;
+            --gray-500:  #777;
+            --gray-400:  #888;
+            --gray-300:  #999;
+            --gray-200:  #aaa;
+
+            /* ── Primitives: Status ── */
+            --blue-600:  #2a6aa0;
+            --blue-500:  #2980b9;
+            --green-600: #2a8c4a;
+            --green-700: #1a5c3a;
+            --amber-500: #c9922a;
+            --red-600:   #c0392b;
+            --purple-600:#7c3aed;
+            --teal-500:  #0d9488;
+
+            /* ── Primitives: Annotation (Tailwind-derived) ── */
+            --anno-green:  #22c55e;
+            --anno-amber:  #f59e0b;
+            --anno-red:    #ef4444;
+            --anno-blue:   #3b82f6;
+
+            /* ── Semantic: Surfaces ── */
+            --bg:              var(--cream-50);
+            --bg-surface:      var(--white);
+            --bg-tint:         var(--cream-100);
+            --bg-muted:        var(--cream-200);
+
+            /* ── Semantic: Text ── */
+            --text:            var(--gray-950);
+            --text-heading:    var(--gray-900);
+            --text-secondary:  var(--gray-700);
+            --text-muted:      var(--gray-400);
+            --text-faint:      var(--gray-300);
+
+            /* ── Semantic: Links & Interaction ── */
+            --link:            var(--gray-950);
+            --link-hover:      var(--gray-700);
+            --btn-bg:          var(--gray-950);
+            --btn-hover:       var(--gray-800);
+
+            /* ── Semantic: Status ── */
+            --status-info:     var(--blue-500);
+            --status-success:  var(--green-600);
+            --status-warning:  var(--amber-500);
+            --status-error:    var(--red-600);
+            --status-feature:  var(--purple-600);
+
+            /* ── Semantic: Borders ── */
+            --border:          var(--neutral-500);
+            --border-light:    var(--neutral-400);
+            --border-section:  var(--cream-300);
+
+            /* ── Semantic: Shadows (4 tiers) ── */
+            --shadow-xs:   0 1px 3px rgba(0,0,0,0.08);
+            --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md:   0 4px 12px rgba(0,0,0,0.12);
+            --shadow-lg:   0 8px 30px rgba(0,0,0,0.12);
+
+            /* ── Semantic: Code (dark theme) ── */
+            --code-bg:         #2d2d2d;
+            --code-text:       #e6e6e6;
+            --code-comment:    #999;
+            --code-selector:   #7ec699;
+            --code-property:   #81d4fa;
+            --code-value:      #f0c674;
+            --code-string:     #cc99cd;
+
+            /* ── Chart palette (6-color categorical) ── */
+            /* Shared with styleguide-charts.html */
+            --chart-1:         var(--blue-600);
+            --chart-2:         var(--red-600);
+            --chart-3:         var(--green-600);
+            --chart-4:         var(--amber-500);
+            --chart-5:         var(--purple-600);
+            --chart-6:         var(--teal-500);
+
+            /* ── Tints (light backgrounds for badges/icons) ── */
+            --tint-blue:       #e3f2fd;
+            --tint-green:      #e8f5e9;
+            --tint-red:        #fce4ec;
+            --tint-amber:      #fff8e1;
+            --tint-purple:     #f3e5f5;
+            --tint-muted:      var(--cream-100);
+
+            /* ── Annotation fills (Tailwind-derived, separate from status) ── */
+            --annotation-green:  var(--anno-green);
+            --annotation-amber:  var(--anno-amber);
+            --annotation-red:    var(--anno-red);
+            --annotation-blue:   var(--anno-blue);
+
+            /* ── Overlays & Dialogs ── */
+            --overlay-backdrop: rgba(34,34,34,0.45);
+            --overlay-surface:  var(--bg-surface);
+            --overlay-shadow:   0 12px 40px rgba(0,0,0,0.18);
+            --overlay-radius:   10px;
+            --overlay-border:   var(--border-light);
+            --focus-ring:       0 0 0 3px rgba(41,128,185,0.45);
+            /* z-index contract — all must exceed .print-toggle (1000) */
+            --z-banner: 1050; --z-dropdown: 1200; --z-drawer: 1300;
+            --z-modal: 1300;  --z-toast: 1400;    --z-coachmark: 1500;
+            --overlay-dur: 180ms; --overlay-ease: ease-out; --overlay-shift: 8px;
+
+            color-scheme: light;
+        }
+
+        /* ============================================
+           FONTS
+           ============================================ */
+
+        /* iA Writer Quattro — Body */
+        @font-face {
+            font-family: 'iA Writer Quattro';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-normal.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'iA Writer Quattro';
+            font-style: italic;
+            font-display: swap;
+            font-weight: 400;
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-italic.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'iA Writer Quattro';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 700;
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-700-normal.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'iA Writer Quattro';
+            font-style: italic;
+            font-display: swap;
+            font-weight: 700;
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-700-italic.woff2) format('woff2');
+        }
+
+        /* Inter — Headings */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ============================================
+           BASE
+           ============================================ */
+        html {
+            font-size: 24px;
+            padding: 1.5rem 2rem;
+            scrollbar-gutter: stable;
+            overflow-x: clip;
+        }
+        .fullbleed {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            box-sizing: border-box;
+        }
+        /* .table-wrap's own base rule (margin: 0 0 1rem 0) ties on specificity and would otherwise
+           win the cascade by source order, silently zeroing margin-left — win with a compound selector. */
+        .table-wrap.fullbleed { margin-left: calc(50% - 50vw); }
+        @media print {
+            .fullbleed { width: auto; margin-inline: 0; padding-inline: 0; }
+        }
+
+        body {
+            font-family: 'iA Writer Quattro', Georgia, 'Times New Roman', serif;
+            font-size: 1rem;
+            line-height: 1.60;
+            color: #222;
+            background: #f5f3f1;
+            max-width: 46em;
+            margin: 3rem auto;
+        }
+
+        /* ============================================
+           HEADINGS
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.05;
+            margin: 0 0 0.75rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 4rem 0 1.25rem 0;
+            letter-spacing: -0.015em;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 3.5rem 0 0.3rem 0;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 2.5rem 0 0.25rem 0;
+        }
+
+        h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 2rem 0 0.2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h6 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 1.5rem 0 0.2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #555;
+        }
+
+        /* ============================================
+           PARAGRAPHS & INLINE
+           ============================================ */
+        p {
+            margin: 0 0 1rem 0;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        u {
+            text-underline-offset: 0.15em;
+            text-decoration-thickness: 1px;
+        }
+
+        s {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        sup {
+            font-size: 0.65em;
+            vertical-align: super;
+            line-height: 0;
+        }
+
+        sub {
+            font-size: 0.65em;
+            vertical-align: sub;
+            line-height: 0;
+        }
+
+        sup a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 600;
+        }
+
+        sup a:hover {
+            color: #555;
+        }
+
+        mark {
+            background: #fff3b0;
+            padding: 0.05em 0.2em;
+            border-radius: 2px;
+        }
+
+        abbr[title] {
+            text-decoration: underline dotted;
+            text-underline-offset: 0.15em;
+            cursor: help;
+        }
+
+        kbd {
+            font-family: 'iA Writer Quattro', monospace;
+            font-size: 0.85em;
+            background: #e8e6e3;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 0.1em 0.4em;
+            box-shadow: 0 1px 0 #bbb;
+        }
+
+        small, .small {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .caption {
+            font-size: 0.75rem;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        /* Intro / lead paragraph */
+        .intro {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           LINKS
+           ============================================ */
+        a {
+            color: #222;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+            text-decoration-thickness: 1px;
+        }
+
+        a:hover {
+            color: #555;
+        }
+
+        a[href^="http"]::after {
+            content: " \2197";
+            font-size: 0.7em;
+            vertical-align: super;
+            line-height: 0;
+            color: #999;
+        }
+
+        a[href^="#"]::after,
+        .footnotes a::after,
+        sup a::after {
+            content: none;
+        }
+
+        /* ============================================
+           LISTS
+           ============================================ */
+        ul, ol {
+            margin: 0 0 1rem 0;
+            padding-left: 1.5em;
+        }
+
+        li {
+            margin: 0.35em 0;
+        }
+
+        li > ul, li > ol {
+            margin: 0.25em 0 0.25em 0;
+        }
+
+        /* Definition list */
+        dl {
+            margin: 0 0 1rem 0;
+        }
+
+        dt {
+            font-weight: 700;
+            margin-top: 0.75rem;
+        }
+
+        dd {
+            margin-left: 1.5em;
+            color: #444;
+        }
+
+        /* ============================================
+           BLOCKQUOTES & PULL QUOTES
+           ============================================ */
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 0 0 0 1.5rem;
+            border-left: 3px solid #ccc;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #777;
+            font-style: normal;
+        }
+
+        .pullquote {
+            margin: 2.5rem auto;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.35;
+            color: #333;
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #222;
+            max-width: 32em;
+        }
+
+        /* ============================================
+           TABLES
+           ============================================ */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 0 0 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0 0 1rem 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.6em 0.8em;
+        }
+
+        th {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #555;
+            border-bottom: 2px solid #222;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Striped */
+        table.striped tbody tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        /* Bordered */
+        table.bordered th,
+        table.bordered td {
+            border: 1px solid #ccc;
+        }
+
+        /* Compact */
+        table.compact th,
+        table.compact td {
+            padding: 0.3em 0.6em;
+            font-size: 0.82rem;
+        }
+
+        /* ============================================
+           IMAGES & FIGURES
+           ============================================ */
+        figure {
+            margin: 1.5rem 0;
+        }
+
+        figure img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        img.rounded {
+            border-radius: 8px;
+        }
+
+        img.shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        img.border {
+            border: 1px solid #ddd;
+        }
+
+        .image-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .image-row figure {
+            flex: 1;
+            margin: 0;
+        }
+
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .wide {
+            max-width: 52.5em;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .full-width {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+        .full-width img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================
+           CODE
+           ============================================ */
+        code {
+            font-family: 'iA Writer Quattro', 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85em;
+            background: #e8e6e3;
+            padding: 0.1em 0.35em;
+            border-radius: 3px;
+        }
+
+        pre {
+            margin: 0 0 1rem 0;
+            padding: 1.25rem 1.5rem;
+            background: #2d2d2d;
+            color: #e6e6e6;
+            border-radius: 6px;
+            overflow-x: auto;
+            line-height: 1.5;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.82rem;
+            color: inherit;
+            border-radius: 0;
+        }
+
+        /* ============================================
+           SYNTAX HIGHLIGHTING
+           ============================================ */
+        .syn-comment  { color: #999; font-style: italic; }
+        .syn-selector { color: #7ec699; }
+        .syn-property { color: #81d4fa; }
+        .syn-value    { color: #f0c674; }
+        .syn-string   { color: #cc99cd; }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1;
+            padding: 0.7em 1.6em;
+            border-radius: 6px;
+            border: 2px solid #222;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .btn::after {
+            content: none;
+        }
+
+        .btn-primary {
+            background: #222;
+            color: #f5f3f1;
+        }
+
+        .btn-primary:hover {
+            background: #444;
+            border-color: #444;
+            color: #f5f3f1;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #222;
+        }
+
+        .btn-secondary:hover {
+            background: #222;
+            color: #f5f3f1;
+        }
+
+        .btn-small {
+            font-size: 0.72rem;
+            padding: 0.5em 1.2em;
+        }
+
+        .btn + .btn {
+            margin-left: 0.5rem;
+        }
+
+        /* ============================================
+           CARDS
+           ============================================ */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin: 0 0 1rem 0;
+        }
+
+        .card-body {
+            padding: 1.25rem 1.5rem;
+            position: relative; /* anchors the hover-revealed .copy-img icon to the top-right corner */
+        }
+
+        .card-body h4 {
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+        }
+
+        .card-row {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card-row .card {
+            flex: 1;
+            margin: 0;
+        }
+
+        .card-horizontal {
+            display: flex;
+        }
+
+        .card-horizontal img {
+            width: 40%;
+            object-fit: cover;
+        }
+
+        .card-horizontal .card-body {
+            flex: 1;
+        }
+
+        /* ============================================
+           CALLOUTS & ASIDES
+           ============================================ */
+        .callout {
+            margin: 1.5rem 0;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #222;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-title {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.4rem;
+        }
+
+        .callout.warning {
+            border-left-color: #c9922a;
+            background: rgba(201, 146, 42, 0.06);
+        }
+
+        aside {
+            margin: 1.5rem 0;
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            color: #555;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 6px;
+        }
+
+        aside p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           DIVIDERS
+           ============================================ */
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 3rem 0;
+        }
+
+        hr.decorative {
+            border: none;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        hr.decorative::after {
+            content: "* * *";
+            color: #999;
+            font-size: 0.85rem;
+            letter-spacing: 0.5em;
+        }
+
+        /* ============================================
+           DETAILS / SUMMARY
+           ============================================ */
+        details {
+            margin: 0 0 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        summary {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.02);
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "\25B6\FE0E";
+            display: inline-block;
+            margin-right: 0.5em;
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        details > div {
+            padding: 0.75rem 1rem 1rem;
+        }
+
+        details > div p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           FOOTNOTES
+           ============================================ */
+        .footnotes {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.82rem;
+            color: #555;
+        }
+
+        .footnotes ol {
+            padding-left: 1.5em;
+        }
+
+        .footnotes li {
+            margin: 0.4rem 0;
+        }
+
+        .footnotes a {
+            color: #555;
+        }
+
+        /* ============================================
+           MEDIA EMBEDS
+           ============================================ */
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            background: #ddd;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        audio {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        /* ============================================
+           BADGES & TAGS
+           ============================================ */
+        .badge {
+            display: inline-block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25em 0.65em;
+            border-radius: 3px;
+            background: #222;
+            color: #f5f3f1;
+            vertical-align: middle;
+        }
+
+        .badge.outline {
+            background: transparent;
+            color: #222;
+            border: 1px solid #222;
+        }
+
+        .badge.muted {
+            background: #e8e6e3;
+            color: #555;
+        }
+
+        .badge.critical  { background: #c0392b; color: #fff; }
+        .badge.important { background: #c9922a; color: #fff; }
+        .badge.nice      { background: #2a8c4a; color: #fff; }
+        .badge.current   { background: #c0392b; color: #fff; }
+        .badge.proposed  { background: #2a8c4a; color: #fff; }
+        .badge.free      { background: #2980b9; color: #fff; }
+        .badge.pro       { background: #6c3fc1; color: #fff; }
+        .badge.phase     { background: #2980b9; color: #fff; }
+        .badge.costco    { background: #005daa; color: #fff; }
+        .badge.walmart   { background: #0071ce; color: #fff; }
+        .badge.covered   { background: #7c3aed; color: #fff; }
+        .badge.amazon    { background: #ff9900; color: #111; }
+        .cheaper-line    { color: #2a8c4a; font-weight: 600; }
+
+        .tag {
+            display: inline-block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2em 0.6em;
+            border-radius: 12px;
+            background: #e8e6e3;
+            color: #444;
+            text-decoration: none;
+            margin: 0.15em;
+        }
+
+        .tag:hover {
+            background: #ddd;
+            color: #222;
+        }
+
+        .tag::after {
+            content: none;
+        }
+
+        /* ============================================
+           ANNOTATED IMAGE SYSTEM
+           ============================================ */
+        .annotated-wrap {
+            position: relative;
+            margin: 1.5rem 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .annotated-wrap img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .annotated-wrap .a-label {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.7rem 1rem 0.5rem;
+            border-bottom: 2px solid;
+        }
+        .annotated-wrap .a-label.current { color: #888; border-color: #ccc; }
+        .annotated-wrap .a-label.rec { color: #2a8c4a; border-color: #2a8c4a; }
+
+        .a-box {
+            position: absolute;
+            border: 2.5px solid;
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        .a-box.green { border-color: #22c55e; background: rgba(34,197,94,0.12); }
+        .a-box.amber { border-color: #f59e0b; background: rgba(245,158,11,0.12); }
+        .a-box.red   { border-color: #ef4444; background: rgba(239,68,68,0.12); }
+        .a-box.blue  { border-color: #3b82f6; background: rgba(59,130,246,0.12); }
+        .a-box.dashed { border-style: dashed; }
+
+        .a-tag {
+            position: absolute;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            pointer-events: none;
+            line-height: 1.3;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+        .a-tag.green { background: #22c55e; color: #fff; }
+        .a-tag.amber { background: #f59e0b; color: #fff; }
+        .a-tag.red   { background: #ef4444; color: #fff; }
+        .a-tag.blue  { background: #3b82f6; color: #fff; }
+
+        .a-num {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            color: #fff;
+            pointer-events: none;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            z-index: 5;
+        }
+        .a-num.green { background: #22c55e; }
+        .a-num.amber { background: #f59e0b; }
+        .a-num.blue  { background: #3b82f6; }
+        .a-num.red   { background: #ef4444; }
+
+        /* Legend */
+        .legend { margin: 1.5rem 0; }
+        .legend-row { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid #e8e5e1; }
+        .legend-row:last-child { border-bottom: none; }
+        .legend-num { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 800; color: #fff; flex-shrink: 0; }
+        .legend-num.green { background: #22c55e; }
+        .legend-num.amber { background: #f59e0b; }
+        .legend-num.blue  { background: #3b82f6; }
+        .legend-num.red   { background: #ef4444; }
+        .legend-text { flex: 1; }
+        .legend-text strong { font-family: 'Inter', sans-serif; font-size: 0.85rem; display: block; margin-bottom: 0.15rem; }
+        .legend-text p { font-size: 0.82rem; color: #555; margin: 0; line-height: 1.5; }
+        .legend-text .phase-tag { font-size: 0.65rem; font-weight: 700; color: #2980b9; margin-top: 0.15rem; }
+
+        /* ============================================
+           CALLOUT VARIANTS
+           ============================================ */
+        .callout.critical {
+            border-left-color: #c0392b;
+            background: rgba(192, 57, 43, 0.06);
+        }
+
+        .callout.positive {
+            border-left-color: #2a8c4a;
+            background: rgba(42, 140, 74, 0.06);
+        }
+
+        .callout.info {
+            border-left-color: #2980b9;
+            background: rgba(41, 128, 185, 0.06);
+        }
+
+        /* ============================================
+           STAT GRID
+           ============================================ */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-grid[data-cols="2"] { grid-template-columns: repeat(2, 1fr); }
+        .stat-grid[data-cols="3"] { grid-template-columns: repeat(3, 1fr); }
+        .stat-grid[data-cols="4"] { grid-template-columns: repeat(4, 1fr); }
+
+        .stat-card {
+            background: #fff;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            container-type: inline-size;
+        }
+
+        .stat-card .stat-value {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 2rem;
+            font-size: clamp(1.2rem, 12cqi, 2rem);
+            font-weight: 700;
+            line-height: 1.1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.72rem;
+            color: #777;
+            margin-top: 0.3rem;
+            font-family: 'Inter', system-ui, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .stat-card.red .stat-value    { color: #c0392b; }
+        .stat-card.green .stat-value  { color: #2a8c4a; }
+        .stat-card.amber .stat-value  { color: #c9922a; }
+        .stat-card.blue .stat-value   { color: #2980b9; }
+        .stat-card.purple .stat-value { color: #6c3fc1; }
+
+        /* ============================================
+           SUMMARY GRID
+           ============================================ */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .summary-grid[data-cols="2"] { grid-template-columns: repeat(2, 1fr); }
+        .summary-grid[data-cols="3"] { grid-template-columns: repeat(3, 1fr); }
+        .summary-grid[data-cols="4"] { grid-template-columns: repeat(4, 1fr); }
+
+        .summary-grid .card {
+            margin: 0;
+            text-align: center;
+            container-type: inline-size;
+        }
+
+        /* ============================================
+           TIMELINE
+           ============================================ */
+        .timeline {
+            margin: 1.5rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline li {
+            position: relative;
+            padding: 0 0 1.5rem 2rem;
+            border-left: 2px solid #ddd;
+        }
+
+        .timeline li:last-child {
+            border-left-color: transparent;
+            padding-bottom: 0;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0.35em;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .timeline li.success::before { background: #2a8c4a; }
+        .timeline li.failure::before  { background: #c0392b; }
+        .timeline li.warning::before  { background: #c9922a; }
+        .timeline li.info::before     { background: #2980b9; }
+
+        .timeline .time {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .timeline .event {
+            font-size: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        /* ============================================
+           BAR CHART
+           ============================================ */
+        .bar-chart {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .bar-chart h5 {
+            margin: 0 0 1rem 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #999;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            gap: 0.75rem;
+        }
+
+        .bar-label {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #444;
+            width: 155px;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 31px;
+            background: #f0eeec;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 0.5rem;
+        }
+
+        .bar-fill.green { background: linear-gradient(90deg, #2a8c4a, #34a853); }
+        .bar-fill.blue  { background: linear-gradient(90deg, #2980b9, #3498db); }
+        .bar-fill.amber { background: linear-gradient(90deg, #c9922a, #e0a832); }
+        .bar-fill.red   { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+        .bar-fill.gray  { background: linear-gradient(90deg, #999, #bbb); }
+
+        .bar-count {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .bar-count.outside {
+            color: #666;
+        }
+
+        /* ============================================
+           WEEKLY TREND CHART
+           ============================================ */
+        .week-chart { margin: 1.5rem 0; }
+        .week-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 80px;
+            margin-bottom: 0.3rem;
+        }
+        .week-bar {
+            flex: 1;
+            border-radius: 3px 3px 0 0;
+            background: #2a6aa0;
+            min-width: 6px;
+            transition: opacity 0.2s;
+        }
+        .week-bar.peak {
+            background: #2a8c4a;
+            border-top: 2px solid #1a5c3a;
+        }
+        .week-bar.partial { opacity: 0.55; }
+        .week-labels {
+            display: flex;
+            gap: 4px;
+        }
+        .week-label {
+            flex: 1;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.55rem;
+            color: #aaa;
+            text-align: center;
+            min-width: 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Week chart color variants */
+        .week-chart.green .week-bar { background: #2a8c4a; }
+        .week-chart.green .week-bar.peak { background: #2a6aa0; border-top-color: #1a4a7a; }
+        .week-chart.amber .week-bar { background: #c9922a; }
+        .week-chart.amber .week-bar.peak { background: #2a8c4a; border-top-color: #1a5c3a; }
+        .week-chart.red .week-bar { background: #c0392b; }
+        .week-chart.red .week-bar.peak { background: #2a8c4a; border-top-color: #1a5c3a; }
+        .week-chart.gray .week-bar { background: #999; }
+        .week-chart.gray .week-bar.peak { background: #2a8c4a; border-top-color: #1a5c3a; }
+
+        /* ============================================
+           DISTRIBUTION BARS
+           ============================================ */
+        .dist-chart { margin: 1.5rem 0; }
+        .dist-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 0.35rem 0;
+            font-size: 0.82rem;
+        }
+        .dist-label {
+            min-width: 10em;
+            color: #555;
+            flex-shrink: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .dist-track {
+            flex: 1;
+            height: 8px;
+            background: #e8e6e3;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .dist-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: #2a6aa0;
+        }
+        .dist-fill.blue  { background: #2a6aa0; }
+        .dist-fill.green { background: #2a8c4a; }
+        .dist-fill.amber { background: #c9922a; }
+        .dist-fill.red   { background: #c0392b; }
+        .dist-fill.gray  { background: #999; }
+        .dist-count {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.75rem;
+            min-width: 4.5em;
+            text-align: right;
+            color: #555;
+            white-space: nowrap;
+        }
+
+
+
+        /* ============================================
+           CONTRIBUTOR CARDS
+           ============================================ */
+        .contributors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .contributor-card {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.8rem 0.5rem 0.5rem;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .contributor-name {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .contributor-meta {
+            font-size: 0.68rem;
+            color: #888;
+        }
+
+        /* ============================================
+           PROJECT HEADER & SECTION ICONS
+           ============================================ */
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .project-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .project-icon.tint-green  { background: #e8f5e9; }
+        .project-icon.tint-blue   { background: #e3f2fd; }
+        .project-icon.tint-red    { background: #fce4ec; }
+        .project-icon.tint-amber  { background: #fff8e1; }
+        .project-icon.tint-purple { background: #f3e5f5; }
+        .project-icon.tint-muted  { background: #f3f0ed; }
+
+        .section-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: -3px;
+            margin-right: 0.3rem;
+        }
+
+        /* ============================================
+           SHADOWS REFERENCE
+           ============================================ */
+        .shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .shadow-sample {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .shadow-sample .label {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 0.3rem;
+        }
+
+        .shadow-sample .value {
+            font-family: 'iA Writer Quattro', monospace;
+            font-size: 0.65rem;
+            color: #999;
+        }
+
+        .shadow-natural {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .shadow-deep {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .shadow-sharp {
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-crisp {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ============================================
+           PRINT MODE TOGGLE
+           ============================================ */
+        .print-toggle {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .print-toggle-btn {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.5em 1em;
+            border: none;
+            background: transparent;
+            color: #888;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .print-toggle-btn:hover {
+            background: #f5f3f1;
+            color: #555;
+        }
+
+        .print-toggle-btn.active {
+            background: #222;
+            color: #f5f3f1;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer-note {
+            font-style: italic;
+            color: #555;
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            html { font-size: 22px; }
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 20px;
+                padding: 1rem;
+            }
+
+            body {
+                margin: 1.5rem auto;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 3rem 0 1rem 0;
+            }
+
+            h3 {
+                font-size: 1.05rem;
+                margin: 2.5rem 0 0.25rem 0;
+            }
+
+            .wide {
+                max-width: 100%;
+                margin-left: 0;
+                transform: none;
+            }
+
+            .card-row {
+                flex-direction: column;
+            }
+
+            .card-horizontal {
+                flex-direction: column;
+            }
+
+            .card-horizontal img {
+                width: 100%;
+            }
+
+            .image-row {
+                flex-direction: column;
+            }
+
+            .shadow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a-tag { font-size: 7px; padding: 2px 5px; }
+            .a-num { width: 16px; height: 16px; font-size: 8px; }
+
+            .pullquote {
+                font-size: 1.2rem;
+                padding: 1rem 1.25rem;
+            }
+
+            .table-wrap {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                padding: 0 1rem;
+            }
+
+            .stat-grid, .stat-grid[data-cols] { grid-template-columns: repeat(2, 1fr); }
+            .summary-grid, .summary-grid[data-cols] { grid-template-columns: repeat(2, 1fr); }
+            .bar-label { width: 110px; font-size: 0.68rem; }
+            .week-row { height: 60px; }
+            .dist-label { min-width: 7em; font-size: 0.75rem; }
+            .project-icon { width: 36px; height: 36px; }
+            .project-icon svg { width: 20px; height: 20px; }
+            .palette-swatch { width: calc(50% - 6px); }
+        }
+
+        /* ============================================
+           OVERLAYS & DIALOGS
+           ============================================ */
+
+        /* Enforce [hidden] even when overlay CSS sets display:flex/block */
+        .ov-root [hidden] { display: none !important; }
+
+        /* ---- Backdrop ---- */
+        .ov-backdrop {
+            position: fixed; inset: 0;
+            background: var(--overlay-backdrop);
+            z-index: calc(var(--z-modal) - 1);
+            opacity: 0;
+            transition: opacity var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-backdrop.ov-open { opacity: 1; }
+
+        /* ---- Shared overlay enter/exit transitions ---- */
+        .ov-modal, .ov-drawer, .ov-sheet, .ov-lightbox, .ov-palette,
+        .ov-popover, .ov-menu, .ov-ctxmenu {
+            opacity: 0;
+            transition: opacity var(--overlay-dur) var(--overlay-ease),
+                        transform var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-modal.ov-open, .ov-drawer.ov-open, .ov-sheet.ov-open,
+        .ov-lightbox.ov-open, .ov-palette.ov-open,
+        .ov-popover.ov-open, .ov-menu.ov-open, .ov-ctxmenu.ov-open { opacity: 1; }
+
+        /* ---- Modal ---- */
+        .ov-modal {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, calc(-50% + var(--overlay-shift)));
+            z-index: calc(var(--z-modal) + 1);
+            background: var(--overlay-surface);
+            border-radius: var(--overlay-radius);
+            box-shadow: var(--overlay-shadow);
+            border: 1px solid var(--overlay-border);
+            min-width: min(420px, 92vw);
+            max-width: min(580px, 94vw);
+            max-height: 85vh;
+            display: flex; flex-direction: column;
+        }
+        .ov-modal.ov-open { transform: translate(-50%, -50%); }
+        .ov-modal.ov-closing { transform: translate(-50%, calc(-50% + var(--overlay-shift))); opacity: 0; }
+
+        .ov-modal-header {
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+            padding: 1.25rem 1.5rem 0;
+        }
+        .ov-modal-header h3, .ov-modal-header h4 {
+            margin: 0; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600;
+        }
+        .ov-modal-body {
+            padding: 1rem 1.5rem 1.25rem;
+            overflow-y: auto; font-size: 0.9rem; line-height: 1.6;
+        }
+        .ov-modal-footer {
+            padding: 0.9rem 1.5rem 1.25rem;
+            display: flex; gap: 0.5rem; justify-content: flex-end;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ---- Close button (shared) ---- */
+        .ov-close {
+            appearance: none; background: none; border: none; cursor: pointer;
+            color: var(--text-muted); padding: 0.2rem; border-radius: 4px;
+            line-height: 1; font-size: 1.25rem;
+            transition: color 0.15s, background 0.15s; flex-shrink: 0;
+        }
+        .ov-close:hover { color: var(--text); background: var(--bg-tint); }
+        .ov-close:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+        /* ---- Toast region ---- */
+        .ov-toast-region {
+            position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+            z-index: var(--z-toast);
+            display: flex; flex-direction: column; align-items: center;
+            gap: 0.5rem; pointer-events: none;
+        }
+        .ov-toast {
+            background: var(--text); color: var(--bg-surface);
+            padding: 0.6rem 1rem;
+            border-radius: 6px; font-size: 0.875rem;
+            box-shadow: var(--shadow-md);
+            display: flex; align-items: center; gap: 0.65rem;
+            pointer-events: auto;
+            animation: ov-toast-in var(--overlay-dur) var(--overlay-ease) both;
+        }
+        .ov-toast.ov-closing { animation: ov-toast-out var(--overlay-dur) var(--overlay-ease) both; }
+        .ov-toast-action {
+            background: none; border: none; cursor: pointer;
+            color: #7ec8f0; font-size: 0.875rem; font-weight: 600;
+            padding: 0; text-decoration: underline;
+        }
+        @keyframes ov-toast-in  { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        @keyframes ov-toast-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(8px); } }
+
+        /* ---- Snackbar ---- */
+        .ov-snackbar {
+            position: fixed; bottom: 1.5rem; left: 1.5rem;
+            z-index: var(--z-toast);
+            background: var(--text); color: var(--bg-surface);
+            padding: 0.7rem 1rem; border-radius: 6px;
+            font-size: 0.875rem; box-shadow: var(--shadow-md);
+            display: flex; align-items: center; gap: 0.65rem;
+            animation: ov-toast-in var(--overlay-dur) var(--overlay-ease) both;
+        }
+        .ov-snackbar.ov-closing { animation: ov-toast-out var(--overlay-dur) var(--overlay-ease) both; }
+
+        /* ---- Site banner ---- */
+        .ov-banner {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: var(--z-banner);
+            background: var(--tint-blue);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.6rem 1.25rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            font-size: 0.875rem;
+        }
+        .ov-banner[hidden] { display: none; }
+
+        /* ---- Tooltip ---- */
+        .ov-tooltip {
+            position: fixed; z-index: calc(var(--z-dropdown) + 10);
+            background: var(--text); color: var(--bg-surface);
+            font-size: 0.8rem; padding: 0.3rem 0.6rem;
+            border-radius: 4px; white-space: nowrap;
+            pointer-events: none; box-shadow: var(--shadow-sm);
+            opacity: 0; transition: opacity var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-tooltip.ov-open { opacity: 1; }
+
+        /* ---- Popover ---- */
+        .ov-popover {
+            position: fixed; z-index: var(--z-dropdown);
+            background: var(--overlay-surface);
+            border: 1px solid var(--border); border-radius: var(--overlay-radius);
+            box-shadow: var(--shadow-md);
+            padding: 1rem 1.25rem; min-width: 220px; max-width: 320px;
+            transform: translateY(calc(-1 * var(--overlay-shift)));
+        }
+        .ov-popover.ov-open { transform: translateY(0); }
+        .ov-popover.ov-closing { opacity: 0; transform: translateY(calc(-1 * var(--overlay-shift))); }
+
+        /* ---- Dropdown menu / context menu ---- */
+        .ov-menu, .ov-ctxmenu {
+            position: fixed; z-index: var(--z-dropdown);
+            background: var(--overlay-surface);
+            border: 1px solid var(--border); border-radius: 8px;
+            box-shadow: var(--shadow-md); padding: 0.35rem 0; min-width: 180px;
+            transform: translateY(calc(-1 * var(--overlay-shift)));
+        }
+        .ov-menu.ov-open, .ov-ctxmenu.ov-open { transform: translateY(0); }
+        .ov-menu-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            width: 100%; text-align: left; padding: 0.5rem 0.9rem;
+            background: none; border: none; cursor: pointer;
+            font-size: 0.875rem; color: var(--text);
+            font-family: 'Inter', sans-serif;
+            transition: background 0.12s;
+        }
+        .ov-menu-item:hover, .ov-menu-item:focus { background: var(--bg-tint); outline: none; }
+        .ov-menu-sep { border: none; border-top: 1px solid var(--border-light); margin: 0.3rem 0; }
+
+        /* ---- Side drawer ---- */
+        .ov-drawer {
+            position: fixed; top: 0; right: 0; bottom: 0;
+            z-index: var(--z-drawer);
+            background: var(--overlay-surface);
+            box-shadow: var(--overlay-shadow);
+            width: min(400px, 88vw);
+            display: flex; flex-direction: column;
+            transform: translateX(calc(100% + var(--overlay-shift)));
+            transition: transform var(--overlay-dur) var(--overlay-ease),
+                        opacity var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-drawer.ov-open { transform: translateX(0); opacity: 1; }
+        .ov-drawer.ov-closing { transform: translateX(calc(100% + var(--overlay-shift))); }
+        .ov-drawer-header {
+            padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-light);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .ov-drawer-header h3 { margin: 0; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; }
+        .ov-drawer-body { padding: 1.25rem 1.5rem; overflow-y: auto; flex: 1; font-size: 0.9rem; }
+
+        /* ---- Bottom sheet ---- */
+        .ov-sheet {
+            position: fixed; left: 0; right: 0; bottom: 0;
+            z-index: var(--z-drawer);
+            background: var(--overlay-surface);
+            border-radius: 12px 12px 0 0;
+            box-shadow: var(--overlay-shadow);
+            max-height: 70vh; display: flex; flex-direction: column;
+            transform: translateY(calc(100% + var(--overlay-shift)));
+            transition: transform var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-sheet.ov-open { transform: translateY(0); }
+        .ov-sheet.ov-closing { transform: translateY(calc(100% + var(--overlay-shift))); }
+        .ov-sheet-handle {
+            width: 40px; height: 4px; background: var(--border);
+            border-radius: 2px; margin: 0.75rem auto 0; flex-shrink: 0;
+        }
+        .ov-sheet-header {
+            padding: 0.75rem 1.5rem 0;
+            display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+        }
+        .ov-sheet-header h3 { margin: 0; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; }
+        .ov-sheet-body { padding: 1rem 1.5rem 1.5rem; overflow-y: auto; flex: 1; font-size: 0.9rem; }
+
+        /* ---- Lightbox ---- */
+        .ov-lightbox {
+            position: fixed; inset: 0; z-index: var(--z-modal);
+            background: rgba(0,0,0,0.88);
+            display: flex; align-items: center; justify-content: center;
+            padding: 2rem;
+            transform: none;
+        }
+        .ov-lightbox.ov-open { opacity: 1; }
+        .ov-lightbox.ov-closing { opacity: 0; }
+        .ov-lightbox .ov-close {
+            position: absolute; top: 1rem; right: 1rem;
+            color: rgba(255,255,255,0.7); font-size: 1.5rem;
+        }
+
+        /* ---- Command palette ---- */
+        .ov-palette {
+            position: fixed; top: 20%; left: 50%;
+            transform: translateX(-50%) translateY(calc(-1 * var(--overlay-shift)));
+            z-index: calc(var(--z-modal) + 1);
+            background: var(--overlay-surface);
+            border: 1px solid var(--border); border-radius: var(--overlay-radius);
+            box-shadow: var(--overlay-shadow);
+            width: min(560px, 92vw);
+        }
+        .ov-palette.ov-open { transform: translateX(-50%) translateY(0); }
+        .ov-palette.ov-closing { transform: translateX(-50%) translateY(calc(-1 * var(--overlay-shift))); opacity: 0; }
+        .ov-palette-input-wrap {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.85rem 1rem; border-bottom: 1px solid var(--border-light);
+        }
+        .ov-palette-input-wrap svg { color: var(--text-muted); flex-shrink: 0; }
+        .ov-palette-input {
+            flex: 1; background: none; border: none; outline: none;
+            font-size: 1rem; color: var(--text); font-family: inherit;
+        }
+        .ov-palette-input::placeholder { color: var(--text-muted); }
+        .ov-palette-list {
+            max-height: 300px; overflow-y: auto;
+            padding: 0.35rem 0; margin: 0; list-style: none;
+        }
+        .ov-palette-option {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.5rem 1rem; font-size: 0.875rem; cursor: pointer; color: var(--text);
+        }
+        .ov-palette-option[aria-selected="true"] { background: var(--bg-tint); }
+        .ov-palette-option .ov-palette-shortcut { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+        .ov-palette-empty { padding: 1.5rem 1rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+        .ov-palette-footer {
+            padding: 0.5rem 1rem; border-top: 1px solid var(--border-light);
+            display: flex; gap: 1.25rem; font-size: 0.75rem; color: var(--text-muted);
+        }
+        .ov-palette-footer .badge { font-size: 0.7rem; vertical-align: middle; }
+
+        /* ---- Coachmark tour ---- */
+        .ov-spotlight {
+            position: fixed; z-index: calc(var(--z-coachmark) - 1);
+            border-radius: 6px;
+            box-shadow: 0 0 0 9999px rgba(0,0,0,0.55);
+            pointer-events: none; display: none;
+            transition: top var(--overlay-dur) var(--overlay-ease),
+                        left var(--overlay-dur) var(--overlay-ease),
+                        width var(--overlay-dur) var(--overlay-ease),
+                        height var(--overlay-dur) var(--overlay-ease);
+        }
+        .ov-coachmark {
+            position: fixed; z-index: var(--z-coachmark); display: none;
+            background: var(--overlay-surface); border: 1px solid var(--border);
+            border-radius: var(--overlay-radius); box-shadow: var(--overlay-shadow);
+            width: min(320px, 88vw); padding: 1.1rem 1.25rem;
+        }
+        .ov-coachmark-step {
+            font-size: 0.75rem; color: var(--text-muted);
+            font-family: 'Inter', sans-serif; margin-bottom: 0.3rem;
+        }
+        .ov-coachmark h4 { margin: 0 0 0.35rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; }
+        .ov-coachmark p  { margin: 0 0 0.85rem; font-size: 0.875rem; line-height: 1.55; }
+        .ov-coachmark-nav { display: flex; gap: 0.5rem; justify-content: flex-end; flex-wrap: wrap; }
+
+        /* ---- Anatomy (static documentation renders) ---- */
+        .ov-anatomy {
+            background: var(--bg-tint); border: 1px solid var(--border-light);
+            border-radius: 8px; padding: 1.5rem; position: relative; margin: 1rem 0;
+        }
+        .ov-label {
+            display: inline-block;
+            font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600;
+            letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted);
+            border: 1px dashed var(--border); padding: 0.1rem 0.35rem;
+            border-radius: 3px; margin-left: 0.4rem; vertical-align: middle;
+        }
+
+        /* Anatomy overrides — make positioned overlays render inline */
+        .ov-anatomy .ov-tooltip,
+        .ov-anatomy .ov-popover {
+            position: relative; opacity: 1; transform: none;
+        }
+        .ov-anatomy .ov-menu,
+        .ov-anatomy .ov-ctxmenu,
+        .ov-anatomy .ov-banner,
+        .ov-anatomy .ov-snackbar {
+            position: relative; top: auto; left: auto; right: auto; bottom: auto;
+            opacity: 1; transform: none; animation: none;
+        }
+        .ov-anatomy .ov-toast { animation: none; }
+        .ov-anatomy .ov-drawer {
+            position: relative; top: auto; right: auto; bottom: auto;
+            transform: none; opacity: 1; width: auto; max-width: 100%;
+            box-shadow: none; border: 1px solid var(--border-light);
+        }
+        .ov-anatomy .ov-sheet {
+            position: relative; left: auto; right: auto; bottom: auto;
+            transform: none; max-height: none;
+        }
+
+        /* ---- Reduced-motion overrides ---- */
+        @media (prefers-reduced-motion: reduce) {
+            .ov-backdrop, .ov-modal, .ov-drawer, .ov-sheet, .ov-lightbox,
+            .ov-palette, .ov-popover, .ov-menu, .ov-ctxmenu,
+            .ov-tooltip, .ov-toast, .ov-snackbar, .ov-spotlight {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+        /* ============================================
+           PRINT STYLES
+           ============================================ */
+        @media print {
+
+            /* ---- PAGE SETUP (A4) ---- */
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                @top-center {
+                    font-family: 'Inter', system-ui, sans-serif;
+                    font-size: 8pt;
+                    color: #888;
+                }
+                @bottom-center {
+                    content: counter(page);
+                    font-family: 'Inter', system-ui, sans-serif;
+                    font-size: 8pt;
+                    color: #888;
+                }
+            }
+
+            /* Named pages for mode-specific headers (Chromium only) */
+            @page color-page {
+                background: #f5f3f1;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                @top-center { content: "Style Guide — Color"; }
+            }
+            @page bw-page {
+                @top-center { content: "Style Guide — B\&W"; }
+            }
+
+            /* ---- BASE RESET ---- */
+            html {
+                font-size: 12pt;
+                padding: 0;
+            }
+
+
+            body {
+                max-width: none;
+                margin: 0;
+                color: #000;
+            }
+
+            /* ---- HIDE NON-PRINT ELEMENTS ---- */
+            .print-toggle {
+                display: none !important;
+            }
+            .ov-root, .ov-backdrop, .ov-modal, .ov-drawer, .ov-sheet,
+            .ov-lightbox, .ov-palette, .ov-coachmark, .ov-spotlight,
+            .ov-toast-region, .ov-tooltip, .ov-popover, .ov-menu,
+            .ov-ctxmenu, .ov-snackbar, .ov-banner {
+                display: none !important;
+            }
+
+            /* Video: hide children, keep container for placeholder text */
+            .video-embed {
+                height: auto;
+                padding-bottom: 0;
+                background: none;
+            }
+            .video-embed iframe,
+            .video-placeholder {
+                display: none !important;
+            }
+            .video-embed::after {
+                display: block;
+                content: "[Video embed — view in browser]";
+                font-style: italic;
+                color: #888;
+                font-size: 0.8rem;
+                padding: 1rem 0;
+            }
+
+            audio {
+                display: none !important;
+            }
+
+            /* ---- LINKS ---- */
+            a[href^="http"]::after {
+                content: none !important;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+
+            /* ---- PAGE BREAK MANAGEMENT ---- */
+            h1 {
+                break-before: page;
+                page-break-before: always;
+            }
+
+            /* First h1 should not force a page break */
+            article > section:first-of-type h1,
+            article > header h1,
+            h1:first-child {
+                break-before: auto;
+                page-break-before: auto;
+            }
+
+            h2, h3, h4, h5, h6 {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .card, .callout, aside, details, figure, .shadow-sample,
+            pre, blockquote, .pullquote, .ov-anatomy, .shoplist {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            table {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+            tr {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* ---- LAYOUT RESETS ---- */
+            .wide {
+                max-width: 100%;
+                margin-left: 0;
+                transform: none;
+            }
+
+            .full-width {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            /* Normalize flex/grid layouts for single-column print */
+            .card-row,
+            .card-horizontal,
+            .image-row {
+                display: block;
+            }
+
+            .card-row .card {
+                margin-bottom: 1rem;
+            }
+
+            .card-horizontal img {
+                width: 100%;
+            }
+
+            .shadow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Prevent table overflow clipping */
+            .table-wrap {
+                overflow: visible;
+            }
+
+            /* ---- CODE BLOCKS ---- */
+            pre {
+                background: #f5f3f0 !important;
+                color: #222 !important;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            pre code {
+                color: #222 !important;
+            }
+
+            code {
+                background: #eee;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* Syntax highlighting — light-background colors for print (Color mode) */
+            .syn-comment  { color: #6a737d !important; font-style: italic; }
+            .syn-selector { color: #22863a !important; }
+            .syn-property { color: #005cc5 !important; }
+            .syn-value    { color: #b31d28 !important; }
+            .syn-string   { color: #6f42c1 !important; }
+
+            /* ---- BUTTONS ---- */
+            .btn {
+                background: transparent !important;
+                color: #000 !important;
+                border: 1px solid #000;
+            }
+
+            /* ---- CARDS ---- */
+            .card {
+                border: 1px solid #ddd;
+            }
+
+            /* ---- CHARTS (week-chart, dist-chart) ---- */
+            .week-bar.partial { opacity: 1; }
+            .dist-track { border: 1px solid #ccc; }
+
+            /* Callouts & asides — fallback when JS hasn't set a print-mode class */
+            body:not(.print-color):not(.print-bw) .callout,
+            body:not(.print-color):not(.print-bw) aside {
+                background: transparent;
+            }
+
+            /* ---- FOOTER FONT NOTE ---- */
+            .footer-note::after {
+                content: " Printed with web fonts — if fonts appear different, ensure iA Writer Quattro and Inter are installed or print from a Chromium browser.";
+                font-style: normal;
+                font-size: 0.75rem;
+                display: block;
+                margin-top: 0.5rem;
+                color: #888;
+            }
+
+            /* ==== COLOR MODE ==== */
+            body.print-color {
+                page: color-page;
+                background: #f5f3f1;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .callout {
+                background: rgba(0, 0, 0, 0.03);
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .callout.warning {
+                border-left-color: #c9922a;
+                background: rgba(201, 146, 42, 0.06);
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color aside {
+                background: rgba(0, 0, 0, 0.02);
+                border-radius: 6px;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color summary {
+                background: rgba(0, 0, 0, 0.02);
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .badge {
+                background: #222;
+                color: #f5f3f1;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .badge.muted {
+                background: #e8e6e3;
+                color: #555;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .badge.critical,
+            body.print-color .badge.current   { background: #c0392b; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.important  { background: #c9922a; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.nice,
+            body.print-color .badge.proposed   { background: #2a8c4a; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.free,
+            body.print-color .badge.phase      { background: #2980b9; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.pro        { background: #6c3fc1; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.costco     { background: #005daa; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.walmart    { background: #0071ce; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body.print-color .badge.covered    { background: #7c3aed; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+            body.print-color .a-box,
+            body.print-color .a-tag,
+            body.print-color .a-num,
+            body.print-color .legend-num {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .tag {
+                background: #e8e6e3;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color mark {
+                background: #fff3b0;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color img.shadow {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            body.print-color .annotated-wrap {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                background: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* Cards — white background against cream, border from base rule */
+            body.print-color .card {
+                box-shadow: none;
+                background: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-color .shadow-natural {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            body.print-color .shadow-deep {
+                box-shadow: none;
+                border: 2px solid #999;
+            }
+
+            body.print-color .shadow-sharp {
+                box-shadow: none;
+                border: 2px solid #bbb;
+                border-right-width: 4px;
+                border-bottom-width: 4px;
+            }
+
+            body.print-color .shadow-crisp {
+                box-shadow: none;
+                border: 1px solid #888;
+            }
+
+            /* Striped table rows — color mode */
+            body.print-color table.striped tbody tr:nth-child(even) {
+                background: rgba(0, 0, 0, 0.03);
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* ==== B&W MODE ==== */
+            body.print-bw {
+                page: bw-page;
+                background: #fff;
+                color: #000;
+            }
+
+            /* Deliberate gray mapping */
+            body.print-bw h6 { color: #555; }
+            body.print-bw s { color: #888; }
+            body.print-bw a { color: #000; }
+            body.print-bw mark {
+                background: #ddd;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* B&W images — apply grayscale filter */
+            body.print-bw img {
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+            }
+
+            /* Callouts — border differentiation instead of color */
+            body.print-bw .callout {
+                border-left: 4px solid #000;
+                background: transparent;
+            }
+
+            body.print-bw .callout.warning {
+                border-left: 4px double #666;
+                background: transparent;
+            }
+
+            body.print-bw aside {
+                border-left: 4px dashed #999;
+                background: transparent;
+            }
+
+            /* Badges — B&W treatments */
+            body.print-bw .badge {
+                background: #000;
+                color: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-bw .badge.outline {
+                background: transparent;
+                color: #000;
+                border: 1.5px solid #000;
+            }
+
+            body.print-bw .badge.muted {
+                background: #ddd;
+                color: #333;
+                border: 1px solid #999;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-bw .badge.critical,
+            body.print-bw .badge.important,
+            body.print-bw .badge.nice,
+            body.print-bw .badge.current,
+            body.print-bw .badge.proposed,
+            body.print-bw .badge.free,
+            body.print-bw .badge.pro,
+            body.print-bw .badge.phase {
+                background: #000;
+                color: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-bw .a-box {
+                border-color: #000;
+                background: rgba(0,0,0,0.05);
+            }
+
+            body.print-bw .a-tag,
+            body.print-bw .a-num,
+            body.print-bw .legend-num {
+                background: #000;
+                color: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-bw .tag {
+                background: #eee;
+                color: #333;
+                border: 1px solid #bbb;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body.print-bw img.shadow {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+
+            body.print-bw .annotated-wrap {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+
+            /* Shadows → borders in B&W */
+            body.print-bw .card,
+            body.print-bw .shadow-sample {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            body.print-bw .shadow-natural,
+            body.print-bw .shadow-deep,
+            body.print-bw .shadow-sharp,
+            body.print-bw .shadow-crisp {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+
+            body.print-bw .shadow-sample .value {
+                font-weight: 600;
+                color: #555;
+            }
+
+            /* Code blocks — B&W syntax: weight/style instead of color */
+            body.print-bw .syn-comment  { color: #666 !important; font-style: italic; }
+            body.print-bw .syn-selector { color: #000 !important; font-weight: 700; }
+            body.print-bw .syn-property { color: #333 !important; font-weight: 600; }
+            body.print-bw .syn-value    { color: #555 !important; }
+            body.print-bw .syn-string   { color: #444 !important; font-style: italic; }
+
+            /* Decorative divider */
+            body.print-bw hr.decorative::after {
+                color: #666;
+            }
+
+            /* Tables */
+            body.print-bw table.striped tr:nth-child(even) {
+                background: #f5f5f5;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* Buttons */
+            body.print-bw .btn {
+                border-color: #000;
+            }
+
+            body.print-bw .btn-primary {
+                border-width: 2px;
+                font-weight: 700;
+            }
+
+            /* ---- PALETTE SWATCHES (print) ---- */
+            body.print-color .swatch-fill {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body.print-bw .swatch-fill {
+                background: #fff !important;
+                border: 2px solid #000;
+            }
+            body.print-bw .palette-shadow .swatch-fill {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+        }
+
+        /* ============================================
+           PALETTE SWATCHES
+           ============================================ */
+        .palette-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .palette-swatch {
+            width: 110px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        .swatch-fill {
+            height: 56px;
+        }
+        .swatch-fill.bordered {
+            border: 1px solid #ddd;
+        }
+        .swatch-meta {
+            padding: 6px 8px 8px;
+        }
+        .swatch-name {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #222;
+            line-height: 1.3;
+            margin: 0 0 2px;
+        }
+        .swatch-hex {
+            font-family: 'iA Writer Quattro', monospace;
+            font-size: 12px;
+            color: #555;
+            margin: 0;
+        }
+        .swatch-token {
+            font-family: 'iA Writer Quattro', monospace;
+            font-size: 10px;
+            color: #999;
+            margin: 0;
+            word-break: break-all;
+        }
+        .palette-shadow .swatch-fill {
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        details.buylist, details.borrowlist { border:none; border-radius:0; overflow:visible; margin:0.5em 0 0.2em; }
+        details.buylist > summary, details.borrowlist > summary { font-weight:600; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:#666; background:none; padding:0.15em 0; }
+        details.buylist > summary::before, details.borrowlist > summary::before { font-size:0.6em; }
+        details.buylist > div { padding:0.1em 0 0; }
+        details.borrowlist { border-left:2px solid #c7b37e; padding-left:0.8rem; }
+        details.borrowlist > div { padding:0.35em 0.6em 0.4em; background:rgba(199,179,126,0.09); }
+        @media print { details.buylist:not([open]) > div, details.borrowlist:not([open]) > div { display:block !important; } details.buylist > summary::before, details.borrowlist > summary::before { content:""; } }
+        .card-body ul.checklist { list-style:none; padding-left:0; margin:0.15em 0 0.5em; }
+        .card-body ul.checklist:has(li:nth-child(6)) { column-width:15rem; column-gap:2rem; }
+        .card-body ul.checklist li { margin:0.25em 0; break-inside:avoid; -webkit-column-break-inside:avoid; }
+        .card-body ul.checklist .ck { flex:1 1 auto; min-width:0; }
+        .card-body ul.checklist .det { display:block; margin-top:0.15em; font-size:0.92em; opacity:0.72; }
+        .card-body ul.checklist label { display:flex; gap:0.5em; align-items:baseline; cursor:pointer; }
+        .card-body ul.checklist input { flex:0 0 auto; transform:translateY(1px); }
+        @media (max-width:600px) { .card-body ul.checklist:has(li:nth-child(6)) { column-width:auto; } }
+
+        /* ============================================
+           PROCUREMENT PLANNER (merged from procurement-planner.html)
+           ============================================ */
+        #procurement .hc-row { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+        #procurement .hc-row label { font-family:'Inter', system-ui, sans-serif; font-weight:600; font-size:.85rem; }
+        #procurement .hc-row input[type=range] { flex:1; min-width:200px; accent-color:#222; }
+        #procurement .hc-row input[type=number] { width:5rem; font:inherit; font-weight:700; font-size:1.2rem; padding:.2rem .4rem; border:1px solid #ccc; border-radius:6px; text-align:center; font-family:'Inter',sans-serif; }
+        #procurement .bar { position:relative; height:12px; background:#f0eeec; border:1px solid #ddd; border-radius:4px; overflow:hidden; min-width:120px; }
+        #procurement .seg { position:absolute; top:0; bottom:0; }
+        #procurement .segC { background:#005daa; }
+        #procurement .segW { background:#0071ce; }
+        #procurement .segA { background:#ff9900; }
+        #procurement .segA { background:#7c3aed; }
+        #procurement .segO { background:repeating-linear-gradient(45deg,#c9922a,#c9922a 3px,transparent 3px,transparent 6px); opacity:.75; }
+        #procurement .needline { position:absolute; top:-2px; bottom:-2px; width:2px; background:#c0392b; }
+        #procurement .est { border-bottom:1px dashed #c9922a; cursor:pointer; }
+        #procurement .researched { border-bottom:1px dotted #2a8c4a; cursor:pointer; }
+        #procurement .editable:hover { background:#fdf6e6; }
+        #procurement .covered { opacity:.55; text-decoration:line-through; }
+        #procurement .reassigned { opacity:.6; text-decoration:line-through; }
+        #procurement .undecided-card { opacity:.55; }
+        #procurement .undecided-card.active { opacity:1; }
+        #procurement .save { color:#2a8c4a; font-weight:700; }
+        #procurement .spend { color:#c0392b; font-weight:700; }
+        #procurement .assign-row { display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; }
+        #procurement .assign-row button { font-family:'Inter',system-ui,sans-serif; font-size:.7rem; font-weight:600; padding:.35em .7em; border-radius:5px; border:1.5px solid #ccc; background:#fff; cursor:pointer; color:#555; }
+        #procurement .assign-row button.active { border-color:#222; background:#222; color:#f5f3f1; }
+        #procurement .assign-row button:disabled { opacity:.35; cursor:not-allowed; text-decoration:line-through; }
+        #procurement .stat-card .stat-value { white-space:normal; overflow:visible; text-overflow:clip; }
+        #procurement .footer-note { font-size:.78rem; color:#777; margin-top:1rem; padding-top:0; border-top:none; font-style:normal; }
+        #procurement .sync-row { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-top:.7rem; padding-top:.7rem; border-top:1px solid #eee; }
+        #procurement .sync-row [hidden] { display:none !important; }
+        #procurement .sync-row .btn + .btn { margin-left:0; }
+        #procurement .sync-pill { font-family:'Inter', system-ui, sans-serif; font-size:.63rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; padding:.25em .6em; border-radius:3px; background:#e8e6e3; color:#555; white-space:nowrap; }
+        #procurement .sync-pill.ok { background:#2a8c4a; color:#fff; }
+        #procurement .sync-pill.warn { background:#c9922a; color:#fff; }
+        #procurement .proc-header { position:relative; }
+        #procurement .proc-header h2 { margin:0; }
+        @media print {
+            #procurement .hc-row, #procurement .assign-row, #procurement .sync-row, .sl-copy, .copy-img { display:none !important; }
+            #procurement details:not([open]) > div { display:block !important; }
+            #procurement summary::before { content:"" !important; }
+        }
+        /* Shopping lists — receipt ticket style, sized for screenshot sharing */
+        .shoplists { display:flex; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
+        .shoplist { position:relative; flex:0 1 360px; min-width:280px; background:#fffdf9; border:1px solid rgba(34,26,20,.14);
+            box-shadow:0 1px 3px rgba(34,26,20,.08); border-radius:2px; padding:1rem 1.1rem;
+            font-family:'iA Writer Quattro','SF Mono','Fira Code',monospace; font-size:.62rem; line-height:1.55; }
+        /* Copy-image buttons: a plain icon, invisible at rest, revealed by hovering (or keyboard-
+           focusing into) the card/ticket/section it belongs to — not by hovering the button itself,
+           which can't be discovered if it can't be seen. Absolutely positioned top-right so it takes
+           no layout space while hidden; the capture pipeline strips it from the clone regardless of
+           where it sits (nodeToBlob's `remove` option), so this doesn't reintroduce the old
+           "button pushes content down" problem the in-flow layout used to guard against. */
+        .copy-img, .sl-copy { position:absolute; top:.6rem; right:.7rem; width:26px; height:26px;
+            display:flex; align-items:center; justify-content:center; padding:0; margin:0;
+            border:none; border-radius:5px; background:transparent; color:#555; cursor:pointer;
+            opacity:0; transition:opacity .15s, background-color .15s; }
+        .copy-img svg, .sl-copy svg { width:14px; height:14px; }
+        .card-body:hover .copy-img, .card-body:focus-within .copy-img,
+        #procurement .proc-header:hover .copy-img, #procurement .proc-header:focus-within .copy-img,
+        .shoplist:hover .sl-copy, .shoplist:focus-within .sl-copy { opacity:.45; }
+        .copy-img:hover, .copy-img:focus-visible, .sl-copy:hover, .sl-copy:focus-visible { opacity:1; background:rgba(0,0,0,.06); }
+        /* copyBlob() disables the button for the full click→flash→restore cycle — keep it visible
+           through that whole window even if the mouse has left the card. */
+        .copy-img:disabled, .sl-copy:disabled { opacity:1; cursor:default; }
+        @media (hover:none) {
+            .copy-img, .sl-copy { opacity:.45; } /* no hover on touch — stay discoverable/tappable */
+        }
+        .shoplist .sl-head { text-align:center; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+            font-size:1.05em; padding-bottom:.6em; margin-bottom:.5em; border-bottom:1px dashed rgba(34,26,20,.3); }
+        .shoplist.sl-costco .sl-head { color:#2f6fce; }
+        .shoplist.sl-run .sl-head { color:#b4461e; }
+        .shoplist.sl-amazon .sl-head { color:#b06a00; }
+        .shoplist.sl-calicut .sl-head { color:#1a7a4c; }
+        .shoplist.sl-chai .sl-head { color:#8a5a1e; }
+        .shoplist.sl-dominos .sl-head { color:#b91c2b; }
+        .shoplist .sl-time { text-align:center; font-weight:700; font-size:.85em; letter-spacing:.03em; margin:-.2em 0 .6em; color:#6b6259; }
+        /* Provisional note for hand-edited (non-catalog) tickets — deliberately NOT .sl-foot,
+           which an existing render() pass hides unless the ticket also has an .est-mark. */
+        .shoplist .sl-provisional { margin:.5em 0 0; font-size:.85em; font-style:italic; color:#a39a90; text-align:center; }
+        /* Kevin's tickets are nested inside an already-padded .card-body — let them shrink on
+           narrow phones instead of clipping (the #procurement tickets never hit this since
+           they aren't nested inside another padded container). */
+        .card-body .shoplist { min-width:0; max-width:100%; }
+        .shoplist ul { list-style:none; margin:0; padding:0; }
+        .shop-row { display:flex; align-items:baseline; gap:.4em; padding:.15em 0; }
+        .shop-row .q { flex:0 0 2em; text-align:right; font-variant-numeric:tabular-nums; color:#a39a90; }
+        .shop-row .nm { flex:1 1 auto; min-width:0; color:#2b2622; overflow-wrap:break-word; word-break:break-word; }
+        .shop-row .nm .pk { color:#a39a90; font-size:.92em; }
+        .shop-row .ldr { flex:1 1 .6em; min-width:.6em; border-bottom:1px dotted #b8afa4; transform:translateY(-.3em); }
+        .shop-row .pr { flex:0 0 auto; font-variant-numeric:tabular-nums; font-weight:600; color:#2b2622; white-space:nowrap; }
+        .shop-row .pr .est-mark { font-weight:700; color:#c9922a; margin-left:.1em; }
+        .shop-total { display:flex; justify-content:space-between; margin-top:.6em; padding-top:.5em;
+            border-top:1px dashed rgba(34,26,20,.3); font-weight:700; text-transform:uppercase; letter-spacing:.05em; font-size:.95em; }
+        .shop-total .amt { font-variant-numeric:tabular-nums; color:#222; }
+        .sl-foot { margin:.5em 0 0; font-size:.85em; font-style:italic; color:#a39a90; text-align:center; }
+        @media (max-width:700px) {
+            .shoplists { display:block; }
+            .shoplist { width:100%; max-width:360px; margin:0 auto; }
+            .shoplist + .shoplist { margin-top:1.5rem; }
+        }
+    
+#loadout .checklist label{cursor:default}
+#loadout .card{scroll-margin-top:12px}
+</style>
+</head>
+<body>
+<article>
+<header style="padding:2rem 1.25rem 0">
+<p class="small" style="text-transform:uppercase;letter-spacing:.06em;color:var(--stone-500,#8a7f6d)">xMEC Alumni Meet · Sept 12</p>
+<h1 style="margin:.25rem 0 .5rem">What to bring</h1>
+<p class="small">Boxes don't tick on this page — screenshot your card and tick on paper. Updated Wed, Sep 9, 9:14 AM.</p>
+<p class="small" style="opacity:.6">11 cards · build 40996f5e02</p>
+</header>
+<section id="loadout">
+<h2>What to bring — per-person load-out</h2>
+<p class="small">The canonical "what's physically in whose car" list — find your card and copy it to WhatsApp. <strong>Strict rule:</strong> a card lists only what <em>you</em> haul — plus your own print jobs, which are listed under 🖨 with the date they're due. Everything Cherian buys centrally sits on <strong>Cherian's</strong> card (it all arrives in his car), so if it isn't on your card you don't buy it and don't bring it. <strong>⚠ = irreplaceable</strong> — no recovery if it's forgotten on the morning. Boxes are a night-before tick list.</p>
+
+<div class="card" id="cherian">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Cherian — load-out <span class="badge nice">the central haul</span></h4>
+        <p class="small"><strong>Arrive</strong> 9:00 · unload at the <a href="https://maps.app.goo.gl/tt3LVZd2BFqCunu5A">drop-off pin</a> by the areas (37.364460, −122.037311).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> the banner + rope + sandbags; the 5 printed run-sheets/rosters.</p>
+        <p class="small"><strong>🖨 Your print job — by Thu Sept 10, before Friday pack night:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">5 run-sheet/roster packets — include prints of <code>site-media/areas-annotated-pits.jpeg</code> and the two Aug 30 layout photos (<code>2026-08-30-layout-desk-and-reel-stand.jpg</code>, <code>2026-08-30-layout-food-station-pit4.jpg</code>)</span></label></li>
+        </ul>
+        <p class="small"><strong>Load into the car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Banner + hanging rope + sandbags <span class="det">The banner weights. ⚠ no backup.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">1 folding wagon + the Costco trolley <span class="det">Two hauling devices, handed to Sreenivas + Jitesh at setup.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Your spare backdrop stand <span class="det">The duplicate — returned after the event.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <span class="ck">Sarin's borrowed canopy <span class="det">✅ Picked up Tue Sept 8, 12:30pm, Zanker/Montague, San Jose. Sarin also lent a cooler on the same trip — a 9th.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">5 printed run-sheets/rosters <span class="det">⚠ no backup — off the printer by Thu Sept 10.</span></span></label></li>
+        </ul>
+        <p class="small"><strong>Boxes already in hand — check they're loaded:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <span class="ck">Costco run <span class="badge nice">Bought Sept 6</span> <span class="det">4× bottled water 80-ct · 1× Kirkland red cold cups 240 · 3× Glad to-go 35-set · 10 lb sugar · Dixie To Go 12 oz 160-ct hot cups · Clorox serving wipes · Kirkland Flushable 640 desk wipes. <strong>Hot cups run ~36 short of the chai need</strong> — Solo 200-ct wasn't stocked.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Amazon orders — yours to use <span class="badge nice">Delivered</span> <span class="det">300 forks + 300 spoons · 300 dinner plates (+100 plates and +100F/100S from the Sept 4 top-up, delivered Sept 5) · napkins · gloves · sanitizer · zip ties · 3 sharpies · painter's tape · whistle · handbell · rope · desk stationery. Rows #3, #11–13, #14.</span></span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Amazon orders — others' items, your car <span class="badge nice">Delivered</span> <span class="det">Volleyball ball (Mikasa) · carnival games set · crayons + colored pencils + bubble supplies · chocolates · desk supplies + 160-pc first-aid + wristbands + 20 tablecloths + table-cover clamps + Avery badge stock.</span></span></label></li>
+        </ul>
+        <p class="small"><strong>Still to buy in-store:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">2 × 2.5-gal potable refill jugs <span class="det">Walmart. Table mats dropped Sept 6; stapler + 2nd sanitizer pump dropped Sept 4.</span></span></label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> nothing — you <em>are</em> the central haul; everyone else's "not yours" points here.</p>
+        <p class="small"><strong>Backup:</strong> <span class="badge muted">no deputy — cover is the group</span> · <strong>Night before:</strong> confirm the ⚠ items are physically in the car, and that the 5 run-sheet/roster packets came off the printer.</p>
+    </div>
+</div>
+
+<div class="card" id="mahesh">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Mahesh — load-out <span class="badge nice">the cold car</span></h4>
+        <p class="small"><strong>Arrive</strong> 8:30 ice run → on-site ~9:30 · unload at the drinks / cold-chain station.</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> the dry-ice slab (can't be bought early — no slab, no ice cream or cold hold) and the cube ice.</p>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Cube ice ~12 × 20-lb bags (D-0 morning)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Dry-ice slab 15–20 lb (thick gloves — Cherian's own pair; trunk, windows open)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Mocktail produce (coconut water, coconut milk, pineapple, citrus + mint garnish) + containers</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked disabled> Beer — moved off this list Sept 7, Cherian bought + stored 168 cans Sept 8</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Chips + dips + salsa + juice boxes (your own buy, Aug 22)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Dry-ice safety kit: thick gloves (Cherian's own pair, $0) · cardboard layer · "DRY ICE — ADULTS ONLY" label · serving tongs + tray</label></li>
+        </ul>
+        <p class="small"><strong>Friday pack night:</strong> collects Sreenivas's cooler + dispenser and Kevin's cooler. <strong>Ice cream is off Mahesh's pack night entirely Sept 7 — Jitesh buys it same-day.</strong> Test the 2 borrowed dispensers for leaks.</p>
+        <p class="small"><strong>Not yours:</strong> the cooler fleet + dispensers (Sreenivas + Jitesh haul — you only count them).</p>
+        <p class="small"><strong>Backup:</strong> Sreenivas · <strong>Night before:</strong> confirm the dry-ice store + fallback, and the ⚠ items.</p>
+    </div>
+</div>
+
+<div class="card" id="aathira">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Aathira — load-out <span class="badge nice">games + reels</span></h4>
+        <p class="small"><strong>Arrive</strong> 9:00 · reels backdrop counter (Area 1) + the games field.</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> the Polaroid film (100 sheets — the whole souvenir runs on it) and the reels backdrop banner.</p>
+        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Human bingo sheets — <strong>two stacks</strong>: one for the 2:15 games activity, one handed to Swathi for the desk take-along. <strong>Cardstock bought Sept 8</strong> ($11.67, Amazon, expenses.md row #20) — the printing itself is still yours to do</label></li>
+        </ul>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Vadam (tug-of-war rope) — picked up Aug 30 ✅</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked disabled> 2 church tables — <strong>pickup cancelled Sept 8</strong>, rental waived and John Paul brings them Sat 10:30. <strong>Still yours: file the vadam's $20 receipt.</strong></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Instax film, 100 sheets — ordered Aug 30 ✅</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Reels backdrop banner (8×8) ✅ + the backdrop stand</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Prizes + chocolates for games · human-bingo sheets + pens · booth tape</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> the volleyball ball + whistle (Cherian's car); the volleyball <strong>net + parts are Sachin's</strong>; the camera is <strong>Sandeep's booking</strong>.</p>
+        <p class="small"><strong>Backup:</strong> Sachin · <strong>Night before:</strong> confirm the film + banner are in the car, and that both bingo stacks are printed — the desk stack goes to Swathi.</p>
+    </div>
+</div>
+
+<div class="card" id="sreenivas-jitesh">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Sreenivas + Jitesh — load-out <span class="badge nice">the haulers</span></h4>
+        <p class="small"><strong>Arrive</strong> 9:00 setup (the permit holders Bharath + Renso precede you at 8:00–8:30).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> every borrowed item — if it wasn't collected at Friday pack night, it's not there.</p>
+        <p class="small"><strong>Collected Friday, in your trucks Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Cooler fleet — 9 lent, closed Sept 7 + Sarin's (Sept 8) (5 collected, 4 self-delivered)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 2 mocktail dispensers (Sreenivas's own + Sandeep's)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 6–8 frozen gallon jugs <span class="badge muted">block ice for the leftover-hold coolers — volunteers freeze them Thu–Fri; they thaw into backup drinking water</span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> ~24 elder chairs + 4–6 spare chairs + 2–3 picnic blankets</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Pop-up canopies — <strong>none in your Friday collection</strong> (Sarin's rides in Cherian's car, picked up Sept 8; John Paul brings the 2nd to site Sat 10:30) — both go up at 10:30 on the day, Sreenivas's job</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> John Paul's 2 tables</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Hauling — ✅ 3 devices sourced: Cherian's wagon + trolley, and <strong>Kevin's trolley on Saturday</strong>. No borrow-call wagons needed</label></li>
+        </ul>
+        <p class="small"><strong>On-site Saturday:</strong> receive Cherian's wagon/trolley/banner/sandbags at 9:00 and run setup. <strong>The ~9:15 ice-cream delivery is gone Sept 7 — Jitesh buys it fresh at 11:00 instead.</strong> <strong>10:30 — canopies up (Sreenivas)</strong>: John Paul arrives with canopy #2; unpack both, assemble, weight — Sarin's over the registration desk (Area 1, the desk stays put), John Paul's over the food tables (Area 4), both standing before the 11:00 open.</p>
+        <p class="small"><strong>Backup:</strong> each other (built-in pair) · <strong>Night before:</strong> tick every borrowed item off the collect list; John Paul — canopy still on for 10:30, and does it come with weights?</p>
+    </div>
+</div>
+
+<div class="card" id="kevin">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Kevin — load-out <span class="badge muted">food / caterer / chai</span></h4>
+        <p class="small"><strong>Arrive</strong> 11:30 · meet Calicut Methods at the delivery access point (no driving on grass).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> none you haul — but the caterer handoff is yours (note the handoff time).</p>
+        <p class="small"><strong>Friday pack night:</strong> drop your cooler with <strong>Mahesh</strong>. <strong>Saturday:</strong> bring your <strong>trolley</strong> — it's the third hauling device, so nothing is borrowed for hauling.</p>
+        <p class="small"><strong>Your actions (not a haul):</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Order Domino's (~10 cheese) for Sat ~12:00 pickup (D-1) — you collect it yourself between sessions, no runner</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> serveware (Cherian's car); cube ice + dry-ice kit (Mahesh's cold chain now); chips/dips/salsa/juice (Mahesh).</p>
+        <p class="small"><strong>Backup:</strong> none — Kevin covers food solo · <strong>Night before:</strong> confirm the Domino's order (Kevin picks it up himself, no runner to name).</p>
+    </div>
+</div>
+
+<div class="card" id="swathi">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Swathi — load-out <span class="badge muted">desk / registration</span></h4>
+        <p class="small"><strong>Arrive</strong> 10:30 · the check-in desk (Area 1).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> the 5 printed check-in lists — the whole door runs on them.</p>
+        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9 — Sandeep proofs them D-1:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 5 check-in lists (master / alphabetical / batch-wise / walk-in / payment-exception)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> &quot;Ring bell for late check-in&quot; sign</label></li>
+        </ul>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 5 printed check-in lists (master / alphabetical / batch-wise / walk-in / payment-exception)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> "Ring bell for late check-in" sign</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The optional Human Bingo handout stack (Aathira prints it and hands it to you)</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> all desk supplies — name stickers, wristbands, first-aid, stationery <em>and the late-check-in handbell</em> (Cherian's car); desk chairs (Sreenivas + Jitesh haul); the <code>[ZELLE ADDRESS]</code> sign (Sandeep prints it — see his card for who carries it).</p>
+        <p class="small"><strong>Backup:</strong> Devika Manohar · <strong>Night before:</strong> confirm all 5 lists are printed and in the car.</p>
+    </div>
+</div>
+
+<div class="card" id="anjana">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Anjana — load-out <span class="badge muted">logistics / MC / quiz</span></h4>
+        <p class="small"><strong>Arrive</strong> ~9:00 to walk the site (you're not on the setup clock — Sreenivas + Jitesh own that).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> the printed xMEC quiz sheets + answer key — you wrote them, no re-source on the day.</p>
+        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> xMEC quiz question sheets + answer key</label></li>
+        </ul>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+                        <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Printed xMEC quiz sheets + answer key</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> CREW volunteer tags (marker-striped, Avery stock)</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> tablecloths/clamps/cups — done, Cherian's car; all setup gear (Sreenivas + Jitesh).</p>
+        <p class="small"><strong>Backup:</strong> Sarath · <strong>Night before:</strong> confirm the quiz sheets + answer key are printed and in the car.</p>
+    </div>
+</div>
+
+<div class="card" id="sandeep">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Sandeep — load-out <span class="badge muted">treasurer / tech</span></h4>
+        <p class="small"><strong>Arrive</strong> on-call at the desk (no setup row).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> none you haul.</p>
+        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The <code>[ZELLE ADDRESS]</code> walk-in sign</label></li>
+        </ul>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The <code>[ZELLE ADDRESS]</code> walk-in sign (you print it) <span class="badge important">confirm you or Swathi carries it to the desk</span></label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The Polaroid camera pack <span class="badge important">orphan — confirm you vs Aathira carries it from the 9/10 delivery</span></label></li>
+        </ul>
+        <p class="small"><strong>Friday pack night:</strong> hand your 5-gal dispenser to Sreenivas (<strong>not in your Saturday car</strong>).</p>
+        <p class="small"><strong>Backup:</strong> <span class="badge muted">no deputy — cover is the group</span> · <strong>Night before:</strong> confirm the camera path, and that the <code>[ZELLE ADDRESS]</code> sign is printed.</p>
+    </div>
+</div>
+
+<div class="card" id="jane">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Jane — load-out <span class="badge muted">kids' zone</span></h4>
+        <p class="small"><strong>Arrive</strong> before 11:00 (kids' corner opens 11:00, Area 1).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> none — the main attraction rides Cherian.</p>
+        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Bay Area–theme coloring pages, ~30–50 — source/design the line-art (Golden Gate, etc.), print, and bring them</label></li>
+        </ul>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Lemons + spoons (lemon-and-spoon race)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Kids' cones</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> the $43.93 carnival games set, crayons/colored pencils, bubble supplies — all Cherian's car; the face painter (a booked service).</p>
+        <p class="small"><strong>Backup:</strong> Meenu (PM blocks only — the AM kids' block still needs a rostered pair) · <strong>Night before:</strong> confirm the lemons + spoons + cones, and that the coloring pages are printed and in the car.</p>
+    </div>
+</div>
+
+<div class="card" id="sarath">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>Sarath — load-out <span class="badge muted">program / photos</span></h4>
+        <p class="small"><strong>Arrive</strong> by ~11:30 — you gather the crowd for the 11:45 welcome (not 1:00).</p>
+        <p class="small"><strong>⚠ No backup if forgotten:</strong> none.</p>
+        <p class="small"><strong>In your car — Saturday:</strong></p>
+        <ul class="checklist">
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Reels-counter props only (the backdrop banner + stand are Aathira's)</label></li>
+            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <strong>Your cooler</strong> — lent to the fleet (Sept 7). You arrive ~11:30, so it takes an afternoon job (ice cream or spare), not a morning one</label></li>
+        </ul>
+        <p class="small"><strong>Not yours:</strong> the handbell (Cherian's car); the reels backdrop banner + stand (Aathira's).</p>
+        <p class="small"><strong>Backup:</strong> you <em>are</em> Anjana's deputy · <strong>Night before:</strong> — .</p>
+    </div>
+</div>
+
+<div class="card" id="external-carriers">
+    <div class="card-body">
+        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
+        <h4>External carriers &amp; open items <span class="badge important">needs Cherian's call</span></h4>
+        <p class="small">Not part of the core team, but they still physically carry things — and a few items still have no owner.</p>
+        <ul>
+            <li><strong>⚠ Bharath</strong> — Area 1 permit card <strong>R3421</strong>: post it 8:00–8:30, keep the receipt on-site all day (it's what legally holds the site).</li>
+            <li><strong>⚠ Renso</strong> — Area 4 permit card <strong>R3420</strong>: same. <strong>Also arrives 10:00 to help Sreenivas raise canopy #1</strong> over the registration desk (new Sept 8) — two slots on the day, 8:00–8:30 and 10:00.</li>
+            <li><strong>Sachin</strong> — the volleyball portable net + parts (he referees the 2:15 block).</li>
+            <li><strong>Joby Babu</strong> <span class="badge important">Arrival TBC</span> — new lender as of Sept 7, one cooler, self-delivered. Not otherwise in these docs; ask him what time he arrives so his cooler can be given a job.</li>
+            <li><strong>Aneesh</strong> <span class="badge nice">Confirmed</span> — Sandeep's brother-in-law, not a group member; one cooler, collected by Sandeep Pillai D-2 (Thu Sept 10).</li>
+            <li><strong>John Paul Varkey</strong> — brings <strong>1 pop-up canopy + 4 tables (his own 2 + the 2 free church tables) + 1 cooler</strong> to site by <strong>10:30</strong> (tables changed Sept 7 from a Friday collection to a Saturday bring — so the 9:00 crew has only Aathira's 2 church tables until he arrives — and as of Sept 8 those are free and come with him too, so the 9:00 crew stages the desk and reels counter on Area 1 built-ins) (goes over the food tables, Area 4; Sreenivas raises it. The caterer doesn't arrive until 11:30 and lunch isn't served until 12:15, so a late canopy costs nothing) — plus his 2 tables collected Friday. Weights <span class="badge important">TBC</span>.</li>
+        </ul>
+        <p class="small"><strong>UNASSIGNED — needs a call:</strong> who carries the Polaroid camera to site (Sandeep or Aathira?); who carries the <code>[ZELLE ADDRESS]</code> sign to the desk; <strong>watermelon</strong> — the Sept 2 food update re-lists it (cut on-site, kept on ice) + a "watermelon crew", but it was dropped Aug 25 — in or out, and whose buy?</p>
+    </div>
+</div>
+</section>
+<p class="small" style="padding:0 1.25rem 2rem"><a href="./index.html">What we bought</a></p>
+</article>
+<script>
+// ---- Copy-ticket-as-image: clone → inline computed styles → SVG foreignObject → canvas → PNG ----
+// iA Writer Quattro loads from jsDelivr; an SVG-as-image can't fetch external fonts, so the woff2s
+// the ticket uses are fetched once, base64'd, and embedded in the SVG (offline → system-mono fallback).
+const TICKET_FONTS = [
+  ['normal',400,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-normal.woff2'],
+  ['italic',400,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-italic.woff2'],
+  ['normal',700,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-700-normal.woff2'],
+];
+let ticketFontCss = null;
+async function buildTicketFontCss(){
+  if(ticketFontCss !== null) return ticketFontCss;
+  try {
+    const rules = await Promise.all(TICKET_FONTS.map(async ([style,weight,url])=>{
+      const bytes = new Uint8Array(await (await fetch(url)).arrayBuffer());
+      let bin='';
+      for(let i=0;i<bytes.length;i+=0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i,i+0x8000));
+      return `@font-face{font-family:'iA Writer Quattro';font-style:${style};font-weight:${weight};src:url(data:font/woff2;base64,${btoa(bin)}) format('woff2');}`;
+    }));
+    ticketFontCss = rules.join('');
+  } catch(e){ ticketFontCss = ''; }
+  return ticketFontCss;
+}
+// nodeToBlob(el, {remove, cleanup}): clone -> inline computed styles -> SVG foreignObject -> canvas -> PNG.
+// remove: CSS selector of elements to strip from the clone (buttons). cleanup: optional (clone)=>void
+// for section-specific tidy-up (procurement strips controls + normalizes full-bleed width).
+// Any closed <details> in el are force-opened before the clone is taken, and restored right after —
+// the open/clone/serialize sequence stays fully synchronous so a render() re-render mid-capture can't
+// swap the (still-open) generated <details> out from under it.
+async function nodeToBlob(el, { remove='.sl-copy,.copy-img', cleanup } = {}){
+  await document.fonts.ready;
+  const fontCss = await buildTicketFontCss();
+  const closed = [...el.querySelectorAll('details')].filter(d=>!d.open);
+  closed.forEach(d=>d.open=true);
+  let svg, w, h;
+  try {
+    const rect = el.getBoundingClientRect();
+    const PAD = 8, tw = Math.ceil(rect.width);
+    const clone = el.cloneNode(true);
+    // Pair BEFORE removing/cleaning up — identical trees guarantee index alignment.
+    const orig = [el, ...el.querySelectorAll('*')];
+    const dupe = [clone, ...clone.querySelectorAll('*')];
+    orig.forEach((node,i)=>{
+      const cs = getComputedStyle(node), st = dupe[i].style;
+      for(const p of cs) st.setProperty(p, cs.getPropertyValue(p));
+    });
+    clone.querySelectorAll(remove).forEach(n=>n.remove());
+    if(cleanup) cleanup(clone);
+    clone.style.margin='0';
+    // Removed content (buttons, cleaned-up rows) shrinks the clone vs. the live node — measure off-screen.
+    const meas = document.createElement('div');
+    meas.style.cssText = 'position:fixed;left:-10000px;top:0;';
+    meas.appendChild(clone);
+    document.body.appendChild(meas);
+    const th = Math.ceil(clone.getBoundingClientRect().height);
+    meas.remove();
+    w = tw + 2*PAD; h = th + 2*PAD;
+    const xhtml = new XMLSerializer().serializeToString(clone);
+    svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">`
+      + (fontCss?`<style>${fontCss}</style>`:'')
+      + `<foreignObject x="${PAD}" y="${PAD}" width="${tw}" height="${th}">${xhtml}</foreignObject></svg>`;
+  } finally {
+    closed.forEach(d=>d.open=false);
+  }
+  const img = new Image();
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  await img.decode();
+  const canvas = document.createElement('canvas');
+  // Cap total pixel area (browsers, notably Safari, refuse oversized canvases) — tall sections like the
+  // procurement planner scale down from 2x toward 1x instead of failing; small cards stay at a crisp 2x.
+  const scale = Math.min(2, Math.sqrt(16000000 / (w*h))) || 1;
+  canvas.width = w*scale; canvas.height = h*scale;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(scale,scale); ctx.fillStyle='#fff'; ctx.fillRect(0,0,w,h);
+  ctx.drawImage(img,0,0);
+  return await new Promise((res,rej)=>canvas.toBlob(b=>b?res(b):rej(new Error('toBlob failed')),'image/png'));
+}
+
+function flashCopyBtn(btn, text){
+  // innerHTML, not textContent — the idle state is now an <svg> icon, not a text node; textContent
+  // would read as '' and restoring via textContent would wipe the icon after the first flash.
+  const orig = btn.dataset.label ?? (btn.dataset.label = btn.innerHTML);
+  btn.innerHTML = text;
+  setTimeout(()=>{ btn.innerHTML = orig; btn.disabled = false; }, 1600);
+}
+function slugify(text){
+  const s = text.replace(/\s*[·§].*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  return s || 'section';
+}
+async function copyBlob(btn, blobPromise, filename){
+  btn.disabled = true;
+  try {
+    // write() called before any await so the user-activation window is still open (Safari is strict);
+    // ClipboardItem accepts a Promise<Blob>.
+    await navigator.clipboard.write([new ClipboardItem({'image/png': blobPromise})]);
+    flashCopyBtn(btn, 'Copied ✓');
+  } catch(e) {
+    try {
+      const blob = await blobPromise;
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(a.href), 10000);
+      flashCopyBtn(btn, 'Saved ↓');
+    } catch(e2) { flashCopyBtn(btn, 'Failed'); }
+  }
+}
+
+
+document.querySelectorAll('.copy-img').forEach(btn => btn.addEventListener('click', () => {
+  const card = btn.closest('.card');
+  copyBlob(btn, nodeToBlob(card), slugify(card.querySelector('h4')?.textContent || 'card') + '.png');
+}));
+</script>
+</body>
+</html>
