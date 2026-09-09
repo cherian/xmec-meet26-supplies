@@ -2741,6 +2741,7 @@
 .thumb.broken { background: var(--bg-tint); }
 .qty { font-size: .85rem; margin: 0 0 .3rem; }
 .owner-group { margin-top: 2rem; }
+.fix-critical { font-weight: 700; color: var(--status-error); }
 @media print {
   .thumb { border: 1px solid #999; }
   .item-row-short { background: none; }
@@ -2753,226 +2754,55 @@
   <header>
     <h1>What we bought</h1>
     <p class="intro">Look at this and tell us what we forgot.</p>
-    <p class="stat-dateline"><span><b>59</b> items</span> <span><b>$1162.21</b> total</span> <span>needs at <b>161</b> heads</span> <span>generated <b>2026-09-09</b></span> <span>commit <b>0264419</b></span></p>
+    <p class="stat-dateline"><span><b>59</b> items</span> <span><b>$1162.21</b> total</span> <span>needs at <b>161</b> heads</span> <span>generated <b>2026-09-09</b></span> <span>commit <b>610fda7</b></span></p>
   </header>
 
   <section>
-    <h2>Audit at 161 heads</h2>
-    <p class="small">Working headcount: 159 total bodies (138 adults + 21 kids), from the registration sheet&#39;s Sept 7 Override row (DEC-068) — supersedes the earlier 160 basis, which was the sheet&#39;s own summary-cell figure before its off-by-one was found (rows sum to 159). Above the city-confirmed capacity of 150; that gap is not itself a finding (DEC-040 closed the capacity question) — only its downstream effects on portions, seats, and consumables are reported below.</p>
+    <h2>What's left</h2>
+    <p class="small">Ordering against 161 (the purchasing ceiling); the reconciled headcount is 159.</p>
 
-    <h3>Do these first</h3>
+    <h3>To buy</h3>
     
   <div class="table-wrap">
     <table class="compact striped">
-      <thead><tr><th>Item</th><th>Buy</th><th>Source</th><th>Est.</th><th>Closes</th></tr></thead>
+      <thead><tr><th>Item</th><th>Buy</th><th>Source</th><th>Est.</th><th>Owner</th></tr></thead>
       <tbody>
-        <tr><td>Hot cups</td><td>bought Sept 8 — +1 Dixie To Go 12 oz, 160-ct (ledger #19, $18.69)</td><td>Costco</td><td>$0</td><td>320 vs 198 needed</td></tr>
-        <tr><td>Water</td><td>bought Sept 8 — +1 Nestlé Pure Life 8 oz, 24-ct (ledger #19, $15.56) — substitution, not the planned Kirkland 80-ct</td><td>Costco</td><td>$0</td><td>416 vs 351 needed</td></tr>
-        <tr><td>Mocktail cups</td><td>accepted, no buy — red cold cups absorb overflow (Sept 7)</td><td>Amazon (Prime)</td><td>$0</td><td>400 vs 318 needed</td></tr>
-        <tr><td>To-go boxes</td><td>accepted, no buy — marginal gap (Sept 7)</td><td>Costco</td><td>$0</td><td>140 vs 110 needed</td></tr>
-        <tr><td>Potable jugs</td><td>2 × 2.5-gal</td><td>Walmart (in-store)</td><td>~$14</td><td>open item — none bought yet</td></tr>
-        <tr><td>Biryani</td><td>9th tray — decided Sept 7 (DEC-069), 8 chicken + 1 veg</td><td>Calicut Methods (Kevin, D-2 call)</td><td>$160</td><td>180 servings vs ~168 needed</td></tr>
-        <tr><td>Chai / pazham pori</td><td>re-quoted at 159 — done (DEC-070)</td><td>Calicut Methods</td><td>+$56</td><td>quote was sized at 145</td></tr>
-        <tr><td>Pizza</td><td>order 10, not 9 — Kevin picks up himself, no runner (DEC-076)</td><td>Domino&#39;s (order by Fri)</td><td>+$10</td><td>1-per-17 rule at 159</td></tr>
-        <tr><td>Cold cups</td><td>accepted, no buy — marginal gap (Sept 7)</td><td>Costco</td><td>$0</td><td>judgement call</td></tr>
-        <tr><td>Coolers</td><td>closed — fleet at 9 lenders (8 closed Sept 7, DEC-081; +1 Sarin, DEC-089)</td><td>n/a</td><td>$0</td><td>9 in hand vs 6-7 jobs needed</td></tr>
-        <tr><td>Dinner plates 10&quot; (unplanned)</td><td>bought Sept 8, not on this list — Dixie 10&quot; (ledger #19, $21.99); pack count assumed at 186-ct, unverified</td><td>Costco</td><td>$0</td><td>~486 vs 209 needed — a 277-spare overbuy, flag for the D-2 call as a return candidate</td></tr>
-        <tr><td colspan="3"><strong>Total</strong></td><td colspan="2"><strong>≈ $14 (2 × 2.5-gal potable jugs — the only item still to buy)</strong></td></tr>
+        <tr><td>Potable jugs</td><td>2 × 2.5-gal</td><td>Walmart in-store</td><td>~$14</td><td>Cherian, by D-1</td></tr>
+        <tr><td colspan="3"><strong>Total</strong></td><td colspan="2"><strong>≈ $14</strong></td></tr>
       </tbody>
     </table>
   </div>
-    <div class="callout critical">
-      <div class="callout-title">Owner + deadline — not a shopping problem</div>
-      
-  <ul>
-    <li>RESOLVED Sept 7 — adult/kid split delivered via the sheet&#39;s Override row (138 adults + 21 kids); the biryani tray call, veg ratio, and kids&#39; pizza/juice counts all now key off it — <strong>Cherian, by done</strong></li>
-    <li>RESOLVED Sept 7 — the $2,016 handoff mechanism is decided and recorded: Sandeep releases the cash from event funds, Kevin delivers it. A D-2 evening core-team call is also back on the calendar (DEC-084), though this item no longer needs it — <strong>Sandeep, by Wed</strong></li>
-    <li>Re-run the payment match — $920 of $5,740 received is unmatched to any registration ($620 explained by the Override row, ~$300 unattributed) — <strong>Sandeep, by Wed</strong></li>
-  </ul>
-    </div>
 
-    <h3>Corrections to the previous version of this page</h3>
-    <div class="callout">
-      <div class="callout-title">The audit was wrong once; here's the fix, with evidence</div>
-      
-  <ul>
-    <li><strong>Cutlery</strong>: was 200 forks / 200 spoons — shown as &quot;SHORT 6&quot; on the previous page (false) → now 300 forks / 300 spoons — not short <span class="small">(expenses.md:30, run-sheet.md:129)</span></li>
-    <li><strong>Napkins</strong>: was 400 → now 800 <span class="small">(alumni-meet-roles.html:3594)</span></li>
-    <li><strong>Tablecloth clamps</strong>: was 32 → now 64 <span class="small">(alumni-meet-plan.md:98)</span></li>
-    <li><strong>Scissors</strong>: was listed as &quot;1 pack (3-ct)&quot; → now 3 scissors <span class="small">(tools/bought-manifest.json:1)</span></li>
-    <li><strong>Paper towels</strong>: was 12 std-equivalent rolls (1 pack) → now 24 std-equivalent rolls (2 packs, 12 double rolls) — the fixed need of 12 was already met either way; only the displayed count was wrong <span class="small">(alumni-meet-plan.md:98)</span></li>
-    <li><strong>Colored pencils</strong>: was 1 box → now 2 boxes <span class="small">(expenses.md:23)</span></li>
-    <li><strong>Tissues</strong>: was not changed → now still 1 pack — the ×2 evidence for this line is circular (Codex); flagged below as a 1-minute manual check instead of silently changed <span class="small">(alumni-meet-plan.md:98)</span></li>
-  </ul>
-    </div>
-
+    <h3>To fix</h3>
     
-  <h3>P0</h3>
-  
-    <div class="callout critical">
-      <div class="callout-title">P0 · People — Shift roster lapsed since Sept 5</div>
-      <p>Unfilled: kids&#39;-zone pairs, 2:30–3:15 cover, drinks pairs, 2 backups, 2–3 starter servers, the 8-person teardown crew, the ice-cream freezer host, and 6–8 freezer-jug volunteers.</p>
-      <p class="small">Evidence: run-sheet.md:171, alumni-meet-plan.md:244, alumni-meet-roles.html:3199</p>
-      <p class="small"><strong>Action:</strong> Send the roster ask on WhatsApp with names and a deadline — a page cannot staff a teardown crew — Cherian, by today</p>
-    </div>
+  <div class="table-wrap">
+    <table class="compact">
+      <tbody>
+        <tr>
+          <td><strong>Cherian</strong></td>
+          <td><ul><li class="fix-critical">Shift roster still unfilled — kids&#39;-zone pairs, 2:30–3:15 cover, drinks pairs, 2 backups, 2–3 starter servers, the 8-person teardown crew, the ice-cream freezer host, 6–8 freezer-jug volunteers — today</li><li>Dry ice — confirm stock and a fallback store; leak-test the 2 borrowed dispensers — D-1</li><li>Start the 2 unblocked Amazon returns (Clorox 75-ct, flushable 126-ct) — D-1</li><li>Walk-in / cash-payer log at check-in — unregistered payers have no sheet rows — D-1</li></ul></td>
+        </tr>
+        <tr>
+          <td><strong>Kevin</strong></td>
+          <td><ul><li class="fix-critical">Chai vessel and tea/milk/masala quantity — neither is sourced; the two 5-gal dispensers are on mocktails until 4:00 — D-2</li><li>Write a caterer hard-failure fallback — only a lateness plan exists today — D-2</li></ul></td>
+        </tr>
+        <tr>
+          <td><strong>Cherian / Swathi</strong></td>
+          <td><ul><li>Confirm canopy weights; request the 2 reservation cards for the 8:00 posting — D-1</li></ul></td>
+        </tr>
+        <tr>
+          <td><strong>Cherian / Kevin</strong></td>
+          <td><ul><li>Confirm on the D-2 call: 9 trays (8 chicken + 1 veg, $1,440) and the $680 chai/pazham total, $2,060 balance — D-2</li></ul></td>
+        </tr>
+        <tr>
+          <td><strong>Sandeep</strong></td>
+          <td><ul><li>Re-run the payment match — $920 received is unmatched to any registration — Wed</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <div class="callout critical">
-      <div class="callout-title">P0 · Money — Caterer cash due D-1 — mechanism decided, amount restated</div>
-      <p>Resolved Sept 7. The mechanism is decided and recorded: Sandeep releases the cash from event funds and Kevin delivers it (alumni-meet-plan.md, alumni-meet-roles.html). The amount is $2,016, not $1,800 — restated after the 9th biryani tray (DEC-069) and the chai re-quote (DEC-070). The &quot;no core-team call left&quot; half is also out of date: a D-2 evening call is back on the calendar, and budget syncing no longer depends on a call at all (DEC-077/079).</p>
-      <p class="small">Evidence: run-sheet.md:150, expenses.md:90, DECISIONS.md:791</p>
-      <p class="small"><strong>Action:</strong> Decide and confirm the handoff mechanism — Sandeep, by Wed</p>
-    </div>
-
-  <h3>P1</h3>
-  
-    <div class="callout warning">
-      <div class="callout-title">P1 · Supplies — Mocktail cups short 18, cold cups short 4, to-go boxes short 5</div>
-      <p>At 159: mocktail cups need 318 (300 in hand, accepted — red cold cups absorb overflow); cold cups need 244 (240 in hand); to-go boxes need 110 (105 in hand). All three are marginal and accepted rather than bought, per the Sept 7 recount.</p>
-      <p class="small">Evidence: tools/build-bought-page.mjs:82</p>
-      <p class="small"><strong>Action:</strong> Accept the mocktail/cold/to-go gaps; only the hot-cup + water shortfalls above are being bought — Cherian, by D-1 (~$6.50 + ~$8–11)</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Catering — No chai vessel is sourced</div>
-      <p>Chai has no documented tea/milk/masala quantity and no owner. The plan assumes 5-gallon insulated dispensers for it, but the only two sourced 5-gal dispensers are allocated to mocktails until 4:00 — no chai-specific vessel is sourced anywhere.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:186, run-sheet.md:189</p>
-      <p class="small"><strong>Action:</strong> Source a chai vessel and quantity, and name an owner — Kevin, by D-2</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · People — Unregistered cash payers have no sheet rows</div>
-      <p>They will not appear on any check-in list at the desk.</p>
-      <p class="small">Evidence: committee-food-update.md:28</p>
-      <p class="small"><strong>Action:</strong> Add a walk-in / cash-payer log at check-in — Cherian, by D-1</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Money — $920 unmatched; $290 separately pending</div>
-      <p>$920 of the $5,740 received is unmatched to any registration — up from $840, since $620 of the rise is explained by the sheet&#39;s own Override row; ~$300 remains genuinely unattributed. Separately, $290 is still pending — not part of money received. The $4,820 &quot;total confirmed&quot; figure has been frozen since Aug 17, so the match has not been re-run since.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:68, committee-food-update.md:27</p>
-      <p class="small"><strong>Action:</strong> Re-run the payment match by Wed night, ahead of the D-2 Calicut call — Sandeep, by Wed</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Catering — No caterer hard-failure plan</div>
-      <p>Only a lateness plan exists; a full no-show or hard failure has no documented fallback. This gap was raised in an earlier council review and never closed.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:279</p>
-      <p class="small"><strong>Action:</strong> Write a hard-failure fallback (who, what, from where) — Kevin, by D-2</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Site — Site logistics loose ends</div>
-      <p>Partly resolved Sept 8. The 2 church tables need no collection — the rental was waived and John Paul brings them Saturday. The BYO allowance was never actually open: both permits (R3420/R3421 pp. 1-2) ask the tent, table and chair questions and answer Yes on each, so 2 canopies / 4 tables / 24 chairs are permitted and declared. Still open: canopy weights TBC, and the reservation cards to be requested for the 8:00 posting.</p>
-      <p class="small">Evidence: run-sheet.md:95, run-sheet.md:147, booking-call-checklist.md:14</p>
-      <p class="small"><strong>Action:</strong> Confirm canopy weights; request the two reservation cards. Tables and the BYO allowance are closed. — Cherian / Swathi, by D-1</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Supplies — Dry ice unconfirmed</div>
-      <p>Stock and fallback store are unconfirmed; dispensers are untested for leaks.</p>
-      <p class="small">Evidence: run-sheet.md:149, run-sheet.md:151</p>
-      <p class="small"><strong>Action:</strong> Confirm dry-ice stock and a fallback store; test dispensers — Cherian, by D-1</p>
-    </div>
-
-    <div class="callout warning">
-      <div class="callout-title">P1 · Supplies — Amazon returns not initiated</div>
-      <p>Clorox 75-ct and flushable 126-ct wipes are now unblocked for return (superseded by Costco packs); tablecloth clips return is on hold.</p>
-      <p class="small">Evidence: expenses.md:38, expenses.md:39</p>
-      <p class="small"><strong>Action:</strong> Start the two unblocked returns — Cherian, by D-1</p>
-    </div>
-
-  <h3>P2</h3>
-  
-    <div class="callout">
-      <div class="callout-title">P2 · Catering — Biryani decided: 9 trays, 8 chicken + 1 veg</div>
-      <p>Decided Sept 7 (DEC-069): 9 trays = 180 servings against the ~168-portion formula at 159 heads (138 adults + 21 kids, the Override row&#39;s split). The adult/kid split that this finding used to say was undelivered arrived with the Override row; the 17 override registrants&#39; dietary data is still pending from Sandeep, which could flip the split to 7 chicken + 2 veg at no extra tray cost, but the tray count itself is settled.</p>
-      <p class="small">Evidence: run-sheet.md:124, alumni-meet-plan.md:169, alumni-meet-roles.html:3149, run-sheet.md:148</p>
-      <p class="small"><strong>Action:</strong> Confirm 9 trays / 8+1 with Calicut Methods on the D-2 call — Cherian / Kevin, by D-2 ($1,440 (was $1,280 at 8 trays))</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Supplies — Hot cups: resolved Sept 8, closed</div>
-      <p>198 needed at 159; 160 in hand was 38 short. A 2nd Dixie To Go 160-ct case (ledger #19, $18.69) closed it — 320 in hand.</p>
-      <p class="small">Evidence: run-sheet.md:128, DECISIONS.md:748</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Supplies — Water: resolved Sept 8; potable jugs still open</div>
-      <p>351 bottles needed at 159; 320 in hand was 31 short. A Nestlé Pure Life 24-ct case (ledger #19, $15.56) closed it — 416 in hand. The 2 fixed potable refill jugs remain unbought — separate item.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:188, expenses.md:11</p>
-      <p class="small"><strong>Action:</strong> Buy 2 × 2.5-gal jugs at Walmart — Cherian, by D-1 (~$14)</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Site — Coolers: fleet closed at 9, no shortfall buy needed</div>
-      <p>The borrow ask closed Sept 7 at 8 lenders (DEC-081) and gained a 9th (Sarin, self-delivering, DEC-089) — this finding predates both. No purchase needed.</p>
-      <p class="small">Evidence: run-sheet.md:103, alumni-meet-roles.html:3867</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Catering — Pizza decided: 10 pies, Kevin covers pickup himself</div>
-      <p>The 1-per-17 rule needs 10 pies at 159; resolved Sept 7 (DEC-076) — Kevin orders 10 and picks them up himself, no separate runner role.</p>
-      <p class="small">Evidence: alumni-meet-roles.html:3756, run-sheet.md:18</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Money — Chai/pazham pori re-quoted at 159 (DEC-070)</div>
-      <p>The $4/head rate is fixed and confirmed with Kevin; the total is derived and re-multiplies with the count. At the Sept 9 purchasing ceiling of 161 that is $680 (was $636 at 159 heads and $580 at 145, both priced off raw headcount; now priced off the same buffered planning count as the biryani). There is no flat quote — never carry the total forward as a fixed figure.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:83</p>
-      <p class="small"><strong>Action:</strong> Nothing to confirm on rate — it is fixed at $4/head. Confirm the derived total ($680 at 161) and the $2,060 balance on the D-2 call — Kevin, by D-2 (+$56 (was quoted as +$60 against the old 145 basis))</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Catering — Ice cream resized to 204 cups; freezer-host role retired</div>
-      <p>Resized Sept 7 to 204 cups (was 62) — sized correctly for the crowd now. The freezer-host role this finding flagged as unfilled is retired: Jitesh buys the cups and dry ice same-day at 11:00 instead, closing the gap a different way.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:180, alumni-meet-roles.html:3202</p>
-      <p class="small"><strong>Action:</strong> None — resolved by the Sept 7 resize — Cherian, by D-1</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · People — RESOLVED — adult/kid split delivered via the sheet&#39;s Override row</div>
-      <p>The split arrived Sept 7 without a separate ask: Sandeep added an Override row to the sheet&#39;s own pivot (138 adults + 21 kids), rather than reporting it verbally. The veg ratio, kids&#39; pizza count and the biryani 9th tray (finding above) all now key off this.</p>
-      <p class="small">Evidence: committee-food-update.md:27, run-sheet.md:134</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Documentation — Six live headcounts consolidated to one: 159</div>
-      <p>136 / 142 / 143 / 145 / 150 / 157 used to appear as &quot;the&quot; headcount across live docs. The Sept 7 document sweep (DEC-068) replaced all of them with 159 (the sheet&#39;s Override-row total), except historical mentions and the city&#39;s 150 cap, which is a real, separate number. The six &quot;Costco run unbought&quot; statements this finding also flagged were corrected Sept 7: the run was bought Sept 6, $155.75, row #17.</p>
-      <p class="small">Evidence: run-sheet.md:88, alumni-meet-plan.md:25</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Money — Budget arithmetic re-based to 159 and one gap number</div>
-      <p>The §3 table now sums to ~$5,897 (was ~$5,736 at the earlier basis) after the Sept 7 recount added the 9th tray and the chai re-quote on top of the Sept 6 ice-cream/beer resize, then moved again Sept 8: beer landed at $209 actual against its $300 estimate (a net -$91 after the +$56 Costco top-up), and Aathira&#39;s human-bingo cardstock ($11.67, was a $10 estimate) landed the same day, and the $20 vadam rental was waived (Fremont Catholic Church, completing DEC-008&#39;s other half after DEC-087 had waived only the tables). The live docs previously carried multiple inconsistent gap figures; the Sept 7 sweep (DEC-073) retired all of them in favor of one number on one base: ~$5,897 planned vs $5,740 received = ≈ −$157 on cash in hand today, or ≈ +$133 if the $290 pending clears (received already exceeds expected by $10, so a &quot;short even fully collected&quot; framing is retired for good).</p>
-      <p class="small">Evidence: alumni-meet-plan.md:68</p>
-      <p class="small"><strong>Action:</strong> None — resolved — Cherian</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Documentation — Stale product descriptions</div>
-      <p>&quot;Clear 16 oz&quot; mocktail cups (actually 9 oz); &quot;~180 hot cups&quot; (actually 160); &quot;13 spare snack plates&quot; (actually 2 spare at 159); &quot;$13/adult across 126&quot; (actually 138 adults, Sept 7 recount).</p>
-      <p class="small">Evidence: alumni-meet-roles.html:2847, alumni-meet-plan.md:74</p>
-      <p class="small"><strong>Action:</strong> Document sweep — fix the stale lines listed — Cherian, by D-1</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Documentation — Registration form fields overstated</div>
-      <p>The plan claims the registration form collected veg/non-veg and allergy fields that never actually went live.</p>
-      <p class="small">Evidence: alumni-meet-plan.md:149, registration-form.md:17</p>
-      <p class="small"><strong>Action:</strong> Document sweep — fix the stale lines listed — Cherian, by D-1</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">P2 · Documentation — DEC-039 missing from the decisions log</div>
-      <p>A renumbering scar from an earlier concurrent-append fix — noted here as history, not corrected (the log does not renumber past entries).</p>
-      <p class="small">Evidence: DECISIONS.md:1</p>
-      <p class="small"><strong>Action:</strong> None — recorded for the record only — —, by —</p>
-    </div>
+    <p class="small">Gaps accepted, not being bought: Mocktail cups 9 oz (clear), Cold cups 18 oz, To-go boxes 38 oz, Tape (general) — Decided not to buy — covered by overlap between cup types and by what&#39;s already in hand.</p>
   </section>
 
   <section>
@@ -3017,23 +2847,23 @@
     </div>
   </article>
 
-  <article class="item-row item-row-short">
+  <article class="item-row">
     <div class="thumb"><img src="https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:b8181d16-05f4-41fe-a896-52c0d91aaa34/as/1193444-847__2.avif?width=556&amp;height=556&amp;fit=contain" alt="Cold cups 18 oz" loading="lazy" onerror="this.parentElement.classList.add('broken');this.remove();"></div>
     <div class="item-row-body">
       <h4>Cold cups 18 oz</h4>
       <p class="small">1× Kirkland Signature Chinet 18 oz red 240-ct (Costco)</p>
-      <div class="qty"><strong>240 cups</strong> bought · 247 cups needed · <span class="badge critical">SHORT 7</span></div>
+      <div class="qty"><strong>240 cups</strong> bought · 247 cups needed · gap accepted, not being bought</div>
       <p class="small">$11.95 · Kevin/Mahesh (drinks) · ledger #17 · <a href="https://www.costco.com/p/-/kirkland-signature-chinet-18-oz-plastic-cup-red-240-count/100421211?langId=-1">product page</a></p>
       <p class="caption">Kept on one run as a single product; splitting to Walmart saves $4.42 but sends cups to two stores — DEC-048.</p>
     </div>
   </article>
 
-  <article class="item-row item-row-short">
+  <article class="item-row">
     <div class="thumb"><img src="https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:a97be987-b7d2-4ba9-baa2-13e7b7477e2c/as/4000326884-847__2.avif?width=556&amp;height=556&amp;fit=contain" alt="To-go boxes 38 oz" loading="lazy" onerror="this.parentElement.classList.add('broken');this.remove();"></div>
     <div class="item-row-body">
       <h4>To-go boxes 38 oz</h4>
       <p class="small">3× Glad Take-Alongs 38 oz, 35-set (Costco)</p>
-      <div class="qty"><strong>105 sets</strong> bought · 112 sets needed · <span class="badge critical">SHORT 7</span></div>
+      <div class="qty"><strong>105 sets</strong> bought · 112 sets needed · gap accepted, not being bought</div>
       <p class="small">$26.31 · Kevin (leftovers) · ledger #17 · <a href="https://www.costco.com/p/-/glad-take-aways-food-storage-containers-with-lids-38-oz-rectangle-35-sets/4000326884?langId=-1">product page</a></p>
       
     </div>
@@ -3215,12 +3045,12 @@
   <section class="owner-group">
     <h5>Swathi</h5>
     
-  <article class="item-row item-row-short">
+  <article class="item-row">
     <div class="thumb"><img src="https://m.media-amazon.com/images/P/B000MVV6AA.01._SCLZZZZZZZ_.jpg" alt="Tape (general)" loading="lazy" onerror="this.parentElement.classList.add('broken');this.remove();"></div>
     <div class="item-row-body">
       <h4>Tape (general)</h4>
       <p class="small">1× Scotch Heavy Duty Packing Tape — note: the catalog need (2 rolls) is not what&#39;s shown as the shopping baseline; only 1 roll of this general tape was actually bought</p>
-      <div class="qty"><strong>1 rolls</strong> bought · 2 rolls needed · <span class="badge critical">SHORT 1</span></div>
+      <div class="qty"><strong>1 rolls</strong> bought · 2 rolls needed · gap accepted, not being bought</div>
       <p class="small">$3.94 · Swathi (desk) · ledger #3 · <a href="https://www.amazon.com/dp/B000MVV6AA">product page</a></p>
       
     </div>
@@ -3517,12 +3347,12 @@
   <section class="owner-group">
     <h5>Cherian</h5>
     
-  <article class="item-row item-row-short">
+  <article class="item-row">
     <div class="thumb"><img src="https://m.media-amazon.com/images/P/B0D6SJWPHL.01._SCLZZZZZZZ_.jpg" alt="Mocktail cups 9 oz (clear)" loading="lazy" onerror="this.parentElement.classList.add('broken');this.remove();"></div>
     <div class="item-row-body">
       <h4>Mocktail cups 9 oz (clear)</h4>
       <p class="small">3× Amazon Basics clear 9 oz 100-ct</p>
-      <div class="qty"><strong>300 cups</strong> bought · 322 cups needed · <span class="badge critical">SHORT 22</span></div>
+      <div class="qty"><strong>300 cups</strong> bought · 322 cups needed · gap accepted, not being bought</div>
       <p class="small">$19.44 · Cherian (central run) · ledger #16 · <a href="https://www.amazon.com/dp/B0D6SJWPHL">product page</a></p>
       
     </div>
