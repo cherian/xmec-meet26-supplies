@@ -1,20 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What to bring — xMEC alumni meet</title>
-<meta property="og:title" content="What to bring — per-person load-out, Sept 12">
-<meta property="og:description" content="11 cards · find yours · what's in your car Saturday">
+<title>Reimbursement settlement — xMEC Bay Meet 2026</title>
+<meta property="og:title" content="Reimbursement settlement — xMEC Bay Meet 2026">
+<meta property="og:description" content="Who gets paid what, net of every refund that has actually posted.">
 <meta property="og:image" content="https://cherian.github.io/xmec-meet26-supplies/og-roles.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://cherian.github.io/xmec-meet26-supplies/roles.html">
+<meta property="og:url" content="https://cherian.github.io/xmec-meet26-supplies/settlement.html">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
+
         /* ============================================
            COLOR TOKENS
            ============================================
@@ -197,20 +193,6 @@
         html {
             font-size: 24px;
             padding: 1.5rem 2rem;
-            scrollbar-gutter: stable;
-            overflow-x: clip;
-        }
-        .fullbleed {
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            padding: 0 clamp(1rem, 4vw, 3rem);
-            box-sizing: border-box;
-        }
-        /* .table-wrap's own base rule (margin: 0 0 1rem 0) ties on specificity and would otherwise
-           win the cascade by source order, silently zeroing margin-left — win with a compound selector. */
-        .table-wrap.fullbleed { margin-left: calc(50% - 50vw); }
-        @media print {
-            .fullbleed { width: auto; margin-inline: 0; padding-inline: 0; }
         }
 
         body {
@@ -684,7 +666,6 @@
 
         .card-body {
             padding: 1.25rem 1.5rem;
-            position: relative; /* anchors the hover-revealed .copy-img icon to the top-right corner */
         }
 
         .card-body h4 {
@@ -931,12 +912,6 @@
         .badge.free      { background: #2980b9; color: #fff; }
         .badge.pro       { background: #6c3fc1; color: #fff; }
         .badge.phase     { background: #2980b9; color: #fff; }
-        .badge.costco    { background: #005daa; color: #fff; }
-        .badge.walmart   { background: #0071ce; color: #fff; }
-        .badge.covered   { background: #7c3aed; color: #fff; }
-        .badge.amazon    { background: #ff9900; color: #111; }
-        .badge.other, .badge.traderjoes, .badge.lensrentals { background: #4b5563; color: #fff; }
-        .cheaper-line    { color: #2a8c4a; font-weight: 600; }
 
         .tag {
             display: inline-block;
@@ -1085,15 +1060,9 @@
         .stat-grid[data-cols="3"] { grid-template-columns: repeat(3, 1fr); }
         .stat-grid[data-cols="4"] { grid-template-columns: repeat(4, 1fr); }
 
-        .stat-card {
-            background: #fff;
-            padding: 1rem 1.25rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            container-type: inline-size;
-        }
-
-        .stat-card .stat-value {
+        /* Typography is standalone so non-card variants (rule, strip, hero)
+           can reuse it without pulling in the card's box treatment. */
+        .stat-value {
             font-family: 'Inter', system-ui, sans-serif;
             font-size: 2rem;
             font-size: clamp(1.2rem, 12cqi, 2rem);
@@ -1104,7 +1073,7 @@
             white-space: nowrap;
         }
 
-        .stat-card .stat-label {
+        .stat-label {
             font-size: 0.72rem;
             color: #777;
             margin-top: 0.3rem;
@@ -1113,11 +1082,93 @@
             letter-spacing: 0.04em;
         }
 
+        .stat-card {
+            background: #fff;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            container-type: inline-size;
+        }
+
         .stat-card.red .stat-value    { color: #c0392b; }
         .stat-card.green .stat-value  { color: #2a8c4a; }
         .stat-card.amber .stat-value  { color: #c9922a; }
         .stat-card.blue .stat-value   { color: #2980b9; }
         .stat-card.purple .stat-value { color: #6c3fc1; }
+
+        /* ---- Stat Card Modifiers ---- */
+        /* Used together with .stat-card, e.g. class="stat-card stat-card--rule" */
+        .stat-card--rule {
+            background: transparent;
+            box-shadow: none;
+            padding: 0.9rem 0 0 0;
+            text-align: left;
+            border-top: 2px solid var(--gray-950);
+            container-type: normal;
+        }
+        .stat-card--rule .stat-value { color: var(--gray-950); }
+        .stat-card--rule .stat-value.accent { color: var(--chart-1); }
+
+        .stat-card--flat {
+            background: var(--white);
+            box-shadow: none;
+            border: 1px solid var(--cream-300);
+            border-radius: 0;
+        }
+        .stat-card--flat .stat-value.cat-1 { color: var(--chart-1); }
+        .stat-card--flat .stat-value.cat-3 { color: var(--chart-3); }
+        .stat-card--flat .stat-value.cat-4 { color: var(--chart-4); }
+
+        /* ---- Hairline Strip ---- */
+        /* A continuous row split by hairlines, no card container at all. */
+        .stat-strip {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .stat-strip > div {
+            flex: 1 1 0;
+            box-sizing: border-box;
+            padding: 0.25rem 1.25rem;
+            border-left: 1px solid var(--cream-200);
+        }
+        .stat-strip > div:first-child {
+            border-left: none;
+            padding-left: 0;
+        }
+        .stat-strip .stat-value { color: var(--gray-950); }
+
+        /* ---- Hero Figure ---- */
+        /* A single big number for when one figure carries the story. */
+        .stat-hero {
+            margin: 1.5rem 0;
+            padding-top: 1.15rem;
+            border-top: 2px solid var(--gray-950);
+        }
+        .stat-hero .stat-eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--gray-400);
+            margin: 0 0 0.4rem;
+        }
+        .stat-hero .stat-figure {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 10vw, 4rem);
+            line-height: 1;
+            color: var(--gray-950);
+            overflow-wrap: break-word;
+        }
+        .stat-hero .stat-caption {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            max-width: 26rem;
+            margin-top: 0.65rem;
+            line-height: 1.5;
+        }
 
         /* ============================================
            SUMMARY GRID
@@ -1136,6 +1187,129 @@
             margin: 0;
             text-align: center;
             container-type: inline-size;
+        }
+
+        /* ============================================
+           STATS AS TEXT
+           ============================================ */
+        /* A second stat-callout family: figures set as text — inside
+           sentences, ledger lines, datelines, drop figures — rather than
+           display objects beside the reading flow. Monochrome ink only;
+           color belongs to the box family above. */
+
+        /* ---- A. Stat Sentence ---- */
+        .stat-sentence .stat-inline {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 1.05em;
+            line-height: 1;
+            color: var(--gray-950);
+        }
+
+        /* ---- B. Ledger ---- */
+        .stat-ledger {
+            margin: 1.5rem 0;
+            max-width: 26rem;
+        }
+        .stat-ledger > div {
+            display: flex;
+            align-items: baseline;
+            padding: 0.35rem 0;
+        }
+        .stat-ledger .ledger-label {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray-600);
+            min-width: 0;
+        }
+        .stat-ledger .ledger-leader {
+            flex: 1;
+            min-width: 2rem;
+            height: 0;
+            border-bottom: 1px dotted var(--gray-300);
+            margin: 0 0.6rem;
+        }
+        .stat-ledger .ledger-fig {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--gray-950);
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        /* ---- C. Dateline ---- */
+        .stat-dateline {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray-600);
+            margin: 1.5rem 0;
+        }
+        .stat-dateline span {
+            white-space: nowrap;
+        }
+        .stat-dateline b {
+            font-weight: 700;
+            color: var(--gray-950);
+        }
+        .stat-dateline span + span::before {
+            content: "\00b7";
+            margin: 0 0.6em;
+            color: var(--gray-300);
+        }
+
+        /* ---- D. Drop Figure ---- */
+        .stat-dropfig {
+            margin: 1.5rem 0;
+            display: flow-root;
+        }
+        .stat-dropfig .dropfig-num {
+            float: left;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 4.2rem;
+            line-height: 0.9;
+            padding: 0.06em 1rem 0 0;
+            color: var(--gray-950);
+        }
+
+        /* ============================================
+           META BAND
+           ============================================ */
+        /* Asymmetric header band: a content-width lead block beside a
+           flexible partner that fills the remainder, split by a hairline.
+           PRINCIPLE: size the lead to its CONTENT (never a proportion like
+           flex:2 — grow inflates the box and opens whitespace beside the
+           content); let ONE partner absorb the slack; cap any caption with
+           max-width so it wraps instead of dictating the column width. */
+        .meta-band {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin: 1.5rem 0;
+            border-top: 2px solid #222;
+        }
+        .meta-band > .meta-lead {
+            flex: 0 0 auto;                 /* hug the content */
+            padding: 1.15rem 1.5rem 1.25rem 0;
+        }
+        .meta-band > .meta-fill {
+            flex: 1 1 auto;                 /* absorb the remainder */
+            min-width: 0;                   /* let inner text wrap, not overflow */
+            padding: 1.15rem 0 1.25rem 1.5rem;  /* match the lead's vertical padding so both columns align under the rule */
+            border-left: 1px solid #e8e5e1;
+        }
+        .meta-band .meta-cap {
+            max-width: 13rem;               /* caption wraps; never sets the column width */
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.65rem;
+            line-height: 1.5;
         }
 
         /* ============================================
@@ -1609,6 +1783,19 @@
 
             .stat-grid, .stat-grid[data-cols] { grid-template-columns: repeat(2, 1fr); }
             .summary-grid, .summary-grid[data-cols] { grid-template-columns: repeat(2, 1fr); }
+            .stat-strip > div {
+                flex: 0 0 50%;
+                margin-top: 0.75rem;
+            }
+            .stat-strip > div:nth-child(-n+2) { margin-top: 0; }
+            .stat-strip > div:nth-child(odd) {
+                border-left: none;
+                padding-left: 0;
+            }
+            .stat-dropfig .dropfig-num { font-size: 3.2rem; }
+            .meta-band { flex-wrap: wrap; }
+            .meta-band > .meta-lead, .meta-band > .meta-fill { flex-basis: 100%; padding-right: 0; }
+            .meta-band > .meta-fill { border-left: 0; padding-left: 0; padding-top: 1.15rem; border-top: 1px solid #e8e5e1; }
             .bar-label { width: 110px; font-size: 0.68rem; }
             .week-row { height: 60px; }
             .dist-label { min-width: 7em; font-size: 0.75rem; }
@@ -2061,7 +2248,9 @@
             }
 
             .card, .callout, aside, details, figure, .shadow-sample,
-            pre, blockquote, .pullquote, .ov-anatomy, .shoplist {
+            pre, blockquote, .pullquote, .ov-anatomy,
+            .stat-grid, .stat-strip, .stat-hero,
+            .stat-sentence, .stat-ledger, .stat-dateline, .stat-dropfig {
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
@@ -2226,9 +2415,6 @@
             body.print-color .badge.free,
             body.print-color .badge.phase      { background: #2980b9; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
             body.print-color .badge.pro        { background: #6c3fc1; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-            body.print-color .badge.costco     { background: #005daa; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-            body.print-color .badge.walmart    { background: #0071ce; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-            body.print-color .badge.covered    { background: #7c3aed; color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 
             body.print-color .a-box,
             body.print-color .a-tag,
@@ -2311,6 +2497,11 @@
             body.print-bw h6 { color: #555; }
             body.print-bw s { color: #888; }
             body.print-bw a { color: #000; }
+            body.print-bw .stat-value,
+            body.print-bw .stat-ledger .ledger-fig,
+            body.print-bw .stat-dropfig .dropfig-num,
+            body.print-bw .stat-sentence .stat-inline,
+            body.print-bw .stat-dateline b { color: #000 !important; }
             body.print-bw mark {
                 background: #ddd;
                 print-color-adjust: exact;
@@ -2523,491 +2714,333 @@
             background: #fff;
             border: 1px solid #eee;
         }
-        details.buylist, details.borrowlist { border:none; border-radius:0; overflow:visible; margin:0.5em 0 0.2em; }
-        details.buylist > summary, details.borrowlist > summary { font-weight:600; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:#666; background:none; padding:0.15em 0; }
-        details.buylist > summary::before, details.borrowlist > summary::before { font-size:0.6em; }
-        details.buylist > div { padding:0.1em 0 0; }
-        details.borrowlist { border-left:2px solid #c7b37e; padding-left:0.8rem; }
-        details.borrowlist > div { padding:0.35em 0.6em 0.4em; background:rgba(199,179,126,0.09); }
-        @media print { details.buylist:not([open]) > div, details.borrowlist:not([open]) > div { display:block !important; } details.buylist > summary::before, details.borrowlist > summary::before { content:""; } }
-        .card-body ul.checklist { list-style:none; padding-left:0; margin:0.15em 0 0.5em; }
-        .card-body ul.checklist:has(li:nth-child(6)) { column-width:15rem; column-gap:2rem; }
-        .card-body ul.checklist li { margin:0.25em 0; break-inside:avoid; -webkit-column-break-inside:avoid; }
-        .card-body ul.checklist .ck { flex:1 1 auto; min-width:0; }
-        .card-body ul.checklist .det { display:block; margin-top:0.15em; font-size:0.92em; opacity:0.72; }
-        .card-body ul.checklist label { display:flex; gap:0.5em; align-items:baseline; cursor:pointer; }
-        .card-body ul.checklist input { flex:0 0 auto; transform:translateY(1px); }
-        @media (max-width:600px) { .card-body ul.checklist:has(li:nth-child(6)) { column-width:auto; } }
-
-        /* ============================================
-           PROCUREMENT PLANNER (merged from procurement-planner.html)
-           ============================================ */
-        #procurement .hc-row { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
-        #procurement .hc-row label { font-family:'Inter', system-ui, sans-serif; font-weight:600; font-size:.85rem; }
-        #procurement .hc-row input[type=range] { flex:1; min-width:200px; accent-color:#222; }
-        #procurement .hc-row input[type=number] { width:5rem; font:inherit; font-weight:700; font-size:1.2rem; padding:.2rem .4rem; border:1px solid #ccc; border-radius:6px; text-align:center; font-family:'Inter',sans-serif; }
-        #procurement .bar { position:relative; height:12px; background:#f0eeec; border:1px solid #ddd; border-radius:4px; overflow:hidden; min-width:120px; }
-        #procurement .seg { position:absolute; top:0; bottom:0; }
-        #procurement .segC { background:#005daa; }
-        #procurement .segW { background:#0071ce; }
-        #procurement .segA { background:#ff9900; }
-        #procurement .segA { background:#7c3aed; }
-        #procurement .segO { background:repeating-linear-gradient(45deg,#c9922a,#c9922a 3px,transparent 3px,transparent 6px); opacity:.75; }
-        #procurement .needline { position:absolute; top:-2px; bottom:-2px; width:2px; background:#c0392b; }
-        #procurement .est { border-bottom:1px dashed #c9922a; cursor:pointer; }
-        #procurement .researched { border-bottom:1px dotted #2a8c4a; cursor:pointer; }
-        #procurement .editable:hover { background:#fdf6e6; }
-        #procurement .covered { opacity:.55; text-decoration:line-through; }
-        #procurement .reassigned { opacity:.6; text-decoration:line-through; }
-        #procurement .undecided-card { opacity:.55; }
-        #procurement .undecided-card.active { opacity:1; }
-        #procurement .save { color:#2a8c4a; font-weight:700; }
-        #procurement .spend { color:#c0392b; font-weight:700; }
-        #procurement .assign-row { display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; }
-        #procurement .assign-row button { font-family:'Inter',system-ui,sans-serif; font-size:.7rem; font-weight:600; padding:.35em .7em; border-radius:5px; border:1.5px solid #ccc; background:#fff; cursor:pointer; color:#555; }
-        #procurement .assign-row button.active { border-color:#222; background:#222; color:#f5f3f1; }
-        #procurement .assign-row button:disabled { opacity:.35; cursor:not-allowed; text-decoration:line-through; }
-        #procurement .stat-card .stat-value { white-space:normal; overflow:visible; text-overflow:clip; }
-        #procurement .footer-note { font-size:.78rem; color:#777; margin-top:1rem; padding-top:0; border-top:none; font-style:normal; }
-        #procurement .sync-row { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-top:.7rem; padding-top:.7rem; border-top:1px solid #eee; }
-        #procurement .sync-row [hidden] { display:none !important; }
-        #procurement .sync-row .btn + .btn { margin-left:0; }
-        #procurement .sync-pill { font-family:'Inter', system-ui, sans-serif; font-size:.63rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; padding:.25em .6em; border-radius:3px; background:#e8e6e3; color:#555; white-space:nowrap; }
-        #procurement .sync-pill.ok { background:#2a8c4a; color:#fff; }
-        #procurement .sync-pill.warn { background:#c9922a; color:#fff; }
-        #procurement .proc-header { position:relative; }
-        #procurement .proc-header h2 { margin:0; }
-        @media print {
-            #procurement .hc-row, #procurement .assign-row, #procurement .sync-row, .sl-copy, .copy-img { display:none !important; }
-            #procurement details:not([open]) > div { display:block !important; }
-            #procurement summary::before { content:"" !important; }
-        }
-        /* Shopping lists — receipt ticket style, sized for screenshot sharing */
-        .shoplists { display:flex; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
-        .shoplist { position:relative; flex:0 1 360px; min-width:280px; background:#fffdf9; border:1px solid rgba(34,26,20,.14);
-            box-shadow:0 1px 3px rgba(34,26,20,.08); border-radius:2px; padding:1rem 1.1rem;
-            font-family:'iA Writer Quattro','SF Mono','Fira Code',monospace; font-size:.62rem; line-height:1.55; }
-        /* Copy-image buttons: a plain icon, invisible at rest, revealed by hovering (or keyboard-
-           focusing into) the card/ticket/section it belongs to — not by hovering the button itself,
-           which can't be discovered if it can't be seen. Absolutely positioned top-right so it takes
-           no layout space while hidden; the capture pipeline strips it from the clone regardless of
-           where it sits (nodeToBlob's `remove` option), so this doesn't reintroduce the old
-           "button pushes content down" problem the in-flow layout used to guard against. */
-        .copy-img, .sl-copy { position:absolute; top:.6rem; right:.7rem; width:26px; height:26px;
-            display:flex; align-items:center; justify-content:center; padding:0; margin:0;
-            border:none; border-radius:5px; background:transparent; color:#555; cursor:pointer;
-            opacity:0; transition:opacity .15s, background-color .15s; }
-        .copy-img svg, .sl-copy svg { width:14px; height:14px; }
-        .card-body:hover .copy-img, .card-body:focus-within .copy-img,
-        #procurement .proc-header:hover .copy-img, #procurement .proc-header:focus-within .copy-img,
-        .shoplist:hover .sl-copy, .shoplist:focus-within .sl-copy { opacity:.45; }
-        .copy-img:hover, .copy-img:focus-visible, .sl-copy:hover, .sl-copy:focus-visible { opacity:1; background:rgba(0,0,0,.06); }
-        /* copyBlob() disables the button for the full click→flash→restore cycle — keep it visible
-           through that whole window even if the mouse has left the card. */
-        .copy-img:disabled, .sl-copy:disabled { opacity:1; cursor:default; }
-        @media (hover:none) {
-            .copy-img, .sl-copy { opacity:.45; } /* no hover on touch — stay discoverable/tappable */
-        }
-        .shoplist .sl-head { text-align:center; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
-            font-size:1.05em; padding-bottom:.6em; margin-bottom:.5em; border-bottom:1px dashed rgba(34,26,20,.3); }
-        .shoplist.sl-costco .sl-head { color:#2f6fce; }
-        .shoplist.sl-run .sl-head { color:#b4461e; }
-        .shoplist.sl-amazon .sl-head { color:#b06a00; }
-        .shoplist.sl-calicut .sl-head { color:#1a7a4c; }
-        .shoplist.sl-chai .sl-head { color:#8a5a1e; }
-        .shoplist.sl-dominos .sl-head { color:#b91c2b; }
-        .shoplist .sl-time { text-align:center; font-weight:700; font-size:.85em; letter-spacing:.03em; margin:-.2em 0 .6em; color:#6b6259; }
-        /* Provisional note for hand-edited (non-catalog) tickets — deliberately NOT .sl-foot,
-           which an existing render() pass hides unless the ticket also has an .est-mark. */
-        .shoplist .sl-provisional { margin:.5em 0 0; font-size:.85em; font-style:italic; color:#a39a90; text-align:center; }
-        /* Kevin's tickets are nested inside an already-padded .card-body — let them shrink on
-           narrow phones instead of clipping (the #procurement tickets never hit this since
-           they aren't nested inside another padded container). */
-        .card-body .shoplist { min-width:0; max-width:100%; }
-        .shoplist ul { list-style:none; margin:0; padding:0; }
-        .shop-row { display:flex; align-items:baseline; gap:.4em; padding:.15em 0; }
-        .shop-row .q { flex:0 0 2em; text-align:right; font-variant-numeric:tabular-nums; color:#a39a90; }
-        .shop-row .nm { flex:1 1 auto; min-width:0; color:#2b2622; overflow-wrap:break-word; word-break:break-word; }
-        .shop-row .nm .pk { color:#a39a90; font-size:.92em; }
-        .shop-row .ldr { flex:1 1 .6em; min-width:.6em; border-bottom:1px dotted #b8afa4; transform:translateY(-.3em); }
-        .shop-row .pr { flex:0 0 auto; font-variant-numeric:tabular-nums; font-weight:600; color:#2b2622; white-space:nowrap; }
-        .shop-row .pr .est-mark { font-weight:700; color:#c9922a; margin-left:.1em; }
-        .shop-total { display:flex; justify-content:space-between; margin-top:.6em; padding-top:.5em;
-            border-top:1px dashed rgba(34,26,20,.3); font-weight:700; text-transform:uppercase; letter-spacing:.05em; font-size:.95em; }
-        .shop-total .amt { font-variant-numeric:tabular-nums; color:#222; }
-        .sl-foot { margin:.5em 0 0; font-size:.85em; font-style:italic; color:#a39a90; text-align:center; }
-        @media (max-width:700px) {
-            .shoplists { display:block; }
-            .shoplist { width:100%; max-width:360px; margin:0 auto; }
-            .shoplist + .shoplist { margin-top:1.5rem; }
-        }
     
-#loadout .checklist label{cursor:default}
-#loadout .card{scroll-margin-top:12px}
+
+/* ============================================
+   REPORT-SPECIFIC ADDITIONS — additive only, no guide selector is redefined
+   ============================================ */
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.muted-fig { color: var(--gray-600); }
+.pay-fig { font-weight: 700; color: var(--gray-950); }
+.tickcell { text-align: center; font-size: 1.1em; color: var(--gray-600); }
+.net-row th { border-top: 2px solid var(--gray-950); }
+.refund-row td { color: var(--gray-700); }
+.payhead { line-height: 1.25; }
+.payhead .payhead-sub { display: block; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--gray-500); font-size: 0.72rem; }
+table tfoot th { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; border-top: 1px solid var(--border-light); }
+@media print { .tickcell { color: #000; } }
 </style>
 </head>
-<body>
+<body class="print-bw">
+<main>
 <article>
-<header style="padding:2rem 1.25rem 0">
-<p class="small" style="text-transform:uppercase;letter-spacing:.06em;color:var(--stone-500,#8a7f6d)">xMEC Alumni Meet · Sept 12</p>
-<h1 style="margin:.25rem 0 .5rem">What to bring</h1>
-<p class="small">Boxes don't tick on this page — screenshot your card and tick on paper. Updated Sun Sep 13, 10:17 PM.</p>
-<p class="small" style="opacity:.6">11 cards · build 97301b3842</p>
-</header>
-<section id="loadout">
-<h2>What to bring — per-person load-out</h2>
-<p class="small">The canonical "what's physically in whose car" list — find your card and copy it to WhatsApp. <strong>Strict rule:</strong> a card lists only what <em>you</em> haul — plus your own print jobs, which are listed under 🖨 with the date they're due. Everything Cherian buys centrally sits on <strong>Cherian's</strong> card (it all arrives in his car), so if it isn't on your card you don't buy it and don't bring it. <strong>⚠ = irreplaceable</strong> — no recovery if it's forgotten on the morning. Boxes are a night-before tick list.</p>
 
-<div class="card" id="cherian">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Cherian — load-out <span class="badge nice">the central haul</span></h4>
-        <p class="small"><strong>Arrive</strong> 10:00 · unload at the <a href="https://maps.app.goo.gl/tt3LVZd2BFqCunu5A">drop-off pin</a> by the areas (37.364460, −122.037311).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> the banner + rope + sandbags; the 5 printed run-sheets/rosters.</p>
-        <p class="small"><strong>🖨 Your print job — by Thu Sept 10, before Friday pack night:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">5 run-sheet/roster packets — include prints of <code>site-media/areas-annotated-pits.jpeg</code> and the two Aug 30 layout photos (<code>2026-08-30-layout-desk-and-reel-stand.jpg</code>, <code>2026-08-30-layout-food-station-pit4.jpg</code>)</span></label></li>
-        </ul>
-        <p class="small"><strong>Load into the car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Banner + hanging rope + sandbags <span class="det">The banner weights. ⚠ no backup.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">1 folding wagon + the Costco trolley <span class="det">Two hauling devices, handed to Sreenivas + Jitesh at setup.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Your spare backdrop stand <span class="det">The duplicate — returned after the event.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <span class="ck">Sarin's borrowed canopy <span class="det">✅ Picked up Tue Sept 8, 12:30pm, Zanker/Montague, San Jose. Sarin also lent a cooler on the same trip — a 9th.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Volleyball pin (inflation needle) <span class="det">Sept 11: newly tracked, off Athira's list. The Mikasa has been boxed since Aug 28 — <strong>pump it tonight</strong> rather than discovering it soft at the 2:15 block.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">QR stand for the desk <span class="det">Sept 11: newly tracked, off Swathi's list — your own, no buy. Holds the [ZELLE ADDRESS] walk-in sign Sandeep prints.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Steel gallon jar — Mahesh's mocktail mixing vessel <span class="det">Sept 11: your own, no buy. Mahesh mixes in it at the drinks station; hand it over at 10:00 setup.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">5 printed run-sheets/rosters <span class="det">⚠ no backup — off the printer by Thu Sept 10.</span></span></label></li>
-        </ul>
-        <p class="small"><strong>Boxes already in hand — check they're loaded:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <span class="ck">Costco run <span class="badge nice">Bought Sept 6</span> <span class="det">4× bottled water 80-ct · 1× Kirkland red cold cups 240 · 3× Glad to-go 35-set · 10 lb sugar · Dixie To Go 12 oz 160-ct hot cups · Clorox serving wipes · Kirkland Flushable 640 desk wipes. <strong>Hot cups run ~36 short of the chai need</strong> — Solo 200-ct wasn't stocked.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Amazon orders — yours to use <span class="badge nice">Delivered</span> <span class="det">300 forks + 300 spoons · 300 dinner plates (+100 plates and +100F/100S from the Sept 4 top-up, delivered Sept 5) · napkins · gloves · sanitizer · zip ties · 3 sharpies · painter's tape · whistle · handbell · rope · desk stationery. Rows #3, #11–13, #14.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Amazon orders — others' items, your car <span class="badge nice">Delivered</span> <span class="det">Volleyball ball (Mikasa) · carnival games set · crayons + colored pencils + bubble supplies · chocolates · desk supplies + 160-pc first-aid + wristbands + 20 tablecloths + table-cover clamps + Avery badge stock.</span></span></label></li>
-        </ul>
-        <p class="small"><strong>In-store leftovers — ✅ nothing left to buy:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked disabled> <span class="ck">3 × 2.5-gal potable refill jugs <span class="det">✅ Bought Sept 11 by Jitesh — Walmart Milpitas, $14.64, <code>expenses.md</code> row #26. Not your errand any more. Table mats dropped Sept 6; stapler + 2nd sanitizer pump dropped Sept 4.</span></span></label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> nothing — you <em>are</em> the central haul; everyone else's "not yours" points here.</p>
-        <p class="small"><strong>Backup:</strong> <span class="badge muted">no deputy — cover is the group</span> · <strong>Night before:</strong> confirm the ⚠ items are physically in the car, and that the 5 run-sheet/roster packets came off the printer.</p>
-    </div>
-</div>
+  <header>
+    <p class="stat-dateline">xMEC Bay Meet 2026 · Las Palmas Park · settled September 13, 2026 at 10:27 PM</p>
+    <h1>Reimbursement settlement</h1>
+    <p class="intro">Eight people paid for this event out of their own pockets. This is what each
+    of them gets back, after subtracting every refund that has actually landed. Nobody has been
+    paid yet.</p>
+  </header>
 
-<div class="card" id="mahesh">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Mahesh — load-out <span class="badge nice">the cold car</span></h4>
-        <p class="small"><strong>Arrive</strong> 9:00 ice run → on-site ~10:00 · unload at the drinks / cold-chain station.</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> the cube ice — no ice, no cold hold for the ice-cream coolers or the drinks.</p>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Cube ice ~20 × 20-lb bags</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Mocktail produce — ✅ guava juice, coconut water ×2, pineapple ×9 bought (rows #27–28). <strong>Still to get: coconut milk + fresh citrus/mint garnish.</strong> Bases + roaster pans are Jitesh's (row #25) — don't re-buy</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked disabled> Beer — moved off this list Sept 7, Cherian bought + stored 168 cans Sept 8</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Chips ✅ (8 bags) + salsa ✅ (8 jars) bought at Costco Sept 10 — <strong>dips and juice boxes are still open</strong></label></li>
-        </ul>
-        <p class="small"><strong>Friday pack night:</strong> collects Sreenivas's cooler + dispenser and Kevin's cooler. <strong>Ice cream is off Mahesh's pack night entirely Sept 7 — Jitesh buys it same-day.</strong> Test the 2 borrowed dispensers for leaks.</p>
-        <p class="small"><strong>Not yours:</strong> the cooler fleet + dispensers (Sreenivas + Jitesh haul — you only count them); <strong>the steel gallon jar you mix in — Cherian brings it Saturday</strong> (Sept 11, his own — don't buy one).</p>
-        <p class="small"><strong>Backup:</strong> Sreenivas · <strong>Night before:</strong> confirm the cube-ice store + fallback, and the ⚠ items.</p>
-    </div>
-</div>
+  <section>
+    <h2>Pay these 8 people by Saturday, September 19</h2>
 
-<div class="card" id="aathira">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Aathira — load-out <span class="badge nice">games + reels</span></h4>
-        <p class="small"><strong>Arrive</strong> 10:00 · reels backdrop counter (Area 1) + the games field.</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> the Polaroid film (100 sheets — the whole souvenir runs on it), the reels backdrop banner, and the <strong>microSD card</strong> — the plan leans on the camera's digital mode + 15-sec video for everyone past the one-print-per-family cap, and none of that records without a card.</p>
-        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Human bingo sheets — <strong>two stacks</strong>: one for the 2:15 games activity, one handed to Swathi for the desk take-along. <strong>Cardstock bought Sept 8</strong> ($11.67, Amazon, expenses.md row #20) — the printing itself is still yours to do</label></li>
-        </ul>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Vadam (tug-of-war rope) — picked up Aug 30 ✅</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked disabled> 2 church tables — <strong>pickup cancelled Sept 8</strong>, rental waived and John Paul brings them Sat 10:30. <strong>Still yours: file the vadam's $20 receipt.</strong></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Instax film, 100 sheets — ordered Aug 30 ✅</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">microSD card for the Instax Mini Evo ⚠ <span class="det">Sept 11: newly tracked. Digital mode + the 15-sec video run off this — it was never on any list. Sandeep asked you to bring a spare as well.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Backup Instax films <span class="det">Sept 11: newly tracked. Beyond the 100 sheets already bought (row #10) — your own call on how many.</span></span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Reels backdrop banner (8×8) ✅ + the backdrop stand</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Prizes + chocolates for games · human-bingo sheets + pens · booth tape</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <span class="ck">Reels-booth board + chalk <span class="det">Sept 11: newly tracked. The board people write on at the reels counter. The chalk does double duty — it also writes the veg/non-veg/halal food labels, so it is needed even if the board isn't.</span></span></label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> the volleyball ball + whistle (Cherian's car); the volleyball <strong>net + parts are Sachin's</strong>; the camera is <strong>Sandeep's booking</strong>.</p>
-        <p class="small"><strong>Backup:</strong> Sachin · <strong>Night before:</strong> confirm the film + banner are in the car, and that both bingo stacks are printed — the desk stack goes to Swathi.</p>
+    <div class="stat-hero">
+      <p class="stat-eyebrow">Total to reimburse · paid by the treasurer</p>
+      <div class="stat-figure">$2,248.90</div>
+      <p class="stat-caption">Across 8 committee members and 33 receipted
+      purchases, net of all 2 refunds that have
+      actually posted. The $500 catering advance is not in this figure — see below.</p>
     </div>
-</div>
 
-<div class="card" id="sreenivas-jitesh">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Sreenivas + Jitesh — load-out <span class="badge nice">the haulers</span></h4>
-        <p class="small"><strong>Arrive</strong> 10:00 setup — moved from 9:00 on Sept 11 (the permit holders Bharath + Renso precede you at 8:00–8:30, so the games-field light claim sits unattended ~1h30 — check it first thing).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> every borrowed item — if it wasn't collected at Friday pack night, it's not there.</p>
-        <p class="small"><strong>Collected Friday, in your trucks Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Cooler fleet — 9 lent, closed Sept 7 + Sarin's (Sept 8) (5 collected, 4 self-delivered)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 2 mocktail dispensers (Sreenivas's own + Sandeep's)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 6–8 frozen gallon jugs <span class="badge muted">block ice for the leftover-hold coolers — volunteers freeze them Thu–Fri; they thaw into backup drinking water</span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> ~24 elder chairs + 4–6 spare chairs + 2–3 picnic blankets</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Pop-up canopies — <strong>none in your Friday collection</strong> (Sarin's rides in Cherian's car, picked up Sept 8; John Paul brings the 2nd to site Sat 10:30) — both go up at 10:30 on the day, Sreenivas's job</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> John Paul's 4 tables — 2 to Jane's kids' zone, 2 to the food canopy — <strong>you pick the physical pair</strong>; either way Area 1 stays at its 2-table cap</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <strong>Jitesh's own Walmart buy, Fri Sept 11 evening</strong> — ✅ bought, $87.02, <code>expenses.md</code> rows #25–26: <strong>3 × 2.5-gal Arrowhead potable jugs</strong> (water-dispenser refills) + <strong>the mocktail bases</strong> (4× Dole pineapple 46 oz · 1× ReaLemon 32 oz · 8× ReaLemon 15 oz · 4× Rose's simple syrup) + <strong>2× Handi-Foil King roaster pans</strong>. <strong>Hand the bases and the pans to Mahesh at the 10:00 setup</strong> — they are his station's stock, not setup gear; the jugs go to the two 10-gallon dispensers</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> Hauling — ✅ 3 devices sourced: Cherian's wagon + trolley, and <strong>Kevin's trolley on Saturday</strong>. No borrow-call wagons needed</label></li>
-        </ul>
-        <p class="small"><strong>On-site Saturday:</strong> receive Cherian's wagon/trolley/banner/sandbags at 10:00 and run setup. <strong>The ~9:15 ice-cream delivery is gone Sept 7 — Jitesh buys it fresh at 11:00 instead.</strong> <strong>10:30 — canopies up (Sreenivas)</strong>: John Paul arrives with canopy #2; unpack both, assemble, weight — Sarin's over the registration desk (Area 1, the desk stays put), John Paul's over the food tables (Area 4), both standing before the 11:00 open. <strong>Also at 10:30 — place John Paul's 4 tables</strong>: 2 into Jane's kids' zone, 2 onto the food canopy; the desk and reels counter do not get a brought table — they stay on Area 1's built-ins for the whole day.</p>
-        <p class="small"><strong>Backup:</strong> each other (built-in pair) · <strong>Night before:</strong> tick every borrowed item off the collect list; John Paul — canopy still on for 10:30, and does it come with weights?</p>
-    </div>
-</div>
+    <p class="stat-sentence">8 payments. Largest
+      <span class="stat-inline">$1,082.96</span>, smallest
+      <span class="stat-inline">$20.50</span>.
+      Every one backed by a saved receipt.</p>
 
-<div class="card" id="kevin">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Kevin — load-out <span class="badge muted">food / caterer / chai</span></h4>
-        <p class="small"><strong>Arrive</strong> 11:30 · meet Calicut Methods at the delivery access point (no driving on grass).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> none you haul — but the caterer handoff is yours (note the handoff time).</p>
-        <p class="small"><strong>Friday pack night:</strong> drop your cooler with <strong>Mahesh</strong>. <strong>Saturday:</strong> bring your <strong>trolley</strong> — it's the third hauling device, so nothing is borrowed for hauling.</p>
-        <p class="small"><strong>Your actions (not a haul):</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox" checked> <span class="ck">✅ Domino's ordered + paid — 10 large cheese, $98.10 <span class="det">Order #41, Fri Sept 11. <strong>John Paul collects it Sat 12:15</strong> — you stay on the food station. Receipt emailed to him for pickup.</span></span></label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> serveware (Cherian's car); cube ice (Mahesh's cold chain now); chips/dips/salsa/juice (Mahesh).</p>
-        <p class="small"><strong>Backup:</strong> none — Kevin covers food solo · <strong>Night before:</strong> Domino's is ordered and paid — confirm John Paul has the receipt and knows the 12:10/12:15 carryout.</p>
+    <div class="table-wrap">
+      <table class="compact striped">
+        <thead>
+          <tr>
+            <th>Pay to</th>
+            <th class="num">Paid out<br>of pocket</th>
+            <th class="num">Refunds<br>posted</th>
+            <th class="num payhead">Net payable<span class="payhead-sub">pay this figure</span></th>
+            <th class="tickcell">Paid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cherian Thomas</td>
+            <td class="num muted-fig">$1,157.97</td>
+            <td class="num muted-fig">−$75.01</td>
+            <td class="num pay-fig">$1,082.96</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Jitesh Nambiar</td>
+            <td class="num muted-fig">$505.61</td>
+            <td class="num muted-fig">−$43.21</td>
+            <td class="num pay-fig">$462.40</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Aathira</td>
+            <td class="num muted-fig">$245.69</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$245.69</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Mahesh Mohanan</td>
+            <td class="num muted-fig">$231.57</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$231.57</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Kevin John Joseph</td>
+            <td class="num muted-fig">$98.10</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$98.10</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Sandeep Pillai</td>
+            <td class="num muted-fig">$59.18</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$59.18</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Anjana</td>
+            <td class="num muted-fig">$48.50</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$48.50</td>
+            <td class="tickcell">☐</td>
+          </tr>
+          <tr>
+            <td>Swathi</td>
+            <td class="num muted-fig">$20.50</td>
+            <td class="num muted-fig">—</td>
+            <td class="num pay-fig">$20.50</td>
+            <td class="tickcell">☐</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th class="num muted-fig">$2,367.12</th>
+            <th class="num muted-fig">−$118.22</th>
+            <th class="num pay-fig">$2,248.90</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
-</div>
+    <p class="small">A dash means nothing happened on that line. It is not a zero that was calculated.</p>
 
-<div class="card" id="swathi">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Swathi — load-out <span class="badge muted">desk / registration</span></h4>
-        <p class="small"><strong>Arrive</strong> 10:30 · the check-in desk (Area 1).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> the 5 printed check-in lists — the whole door runs on them.</p>
-        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9 — Sandeep proofs them D-1:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 5 check-in lists (master / alphabetical / batch-wise / walk-in / payment-exception)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> &quot;Ring bell for late check-in&quot; sign</label></li>
-        </ul>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> 5 printed check-in lists (master / alphabetical / batch-wise / walk-in / payment-exception)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> "Ring bell for late check-in" sign</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The optional Human Bingo handout stack (Aathira prints it and hands it to you)</label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> all desk supplies — name stickers, wristbands, first-aid, stationery <em>and the late-check-in handbell</em> (Cherian's car); desk chairs (Sreenivas + Jitesh haul); the <code>[ZELLE ADDRESS]</code> sign (Sandeep prints it — see his card for who carries it).</p>
-        <p class="small"><strong>Backup:</strong> Devika Manohar · <strong>Night before:</strong> confirm all 5 lists are printed and in the car.</p>
-    </div>
-</div>
+    <h3>Refunds posted against these figures</h3>
+    <p>Only credits that have actually landed appear here. Each one is a dated ledger row of its
+    own — no original purchase row was ever edited.</p>
+    
+      <h4>Cherian Thomas</h4>
+      <div class="stat-ledger">
+        <div><span class="ledger-label">Paid out of pocket</span><span class="ledger-leader"></span><span class="ledger-fig">$1,157.97</span></div>
+        <div><span class="ledger-label">Sept 13 · Costco (Santa Clara #129) refund</span><span class="ledger-leader"></span><span class="ledger-fig">−$75.01</span></div>
+        <div><span class="ledger-label"><strong>Net payable</strong></span><span class="ledger-leader"></span><span class="ledger-fig"><strong>$1,082.96</strong></span></div>
+      </div>
+      <h4>Jitesh Nambiar</h4>
+      <div class="stat-ledger">
+        <div><span class="ledger-label">Paid out of pocket</span><span class="ledger-leader"></span><span class="ledger-fig">$505.61</span></div>
+        <div><span class="ledger-label">Sept 13 · Costco (Newark #1660) refund</span><span class="ledger-leader"></span><span class="ledger-fig">−$43.21</span></div>
+        <div><span class="ledger-label"><strong>Net payable</strong></span><span class="ledger-leader"></span><span class="ledger-fig"><strong>$462.40</strong></span></div>
+      </div>
+  </section>
 
-<div class="card" id="anjana">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Anjana — load-out <span class="badge muted">logistics / MC / quiz</span></h4>
-        <p class="small"><strong>Arrive</strong> ~10:00 to walk the site (you're not on the setup clock — Sreenivas + Jitesh own that).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> the printed xMEC quiz sheets + answer key — you wrote them, no re-source on the day.</p>
-        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> xMEC quiz question sheets + answer key</label></li>
-        </ul>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-                        <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Printed xMEC quiz sheets + answer key</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> CREW volunteer tags (marker-striped, Avery stock)</label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> tablecloths/clamps/cups — done, Cherian's car; all setup gear (Sreenivas + Jitesh).</p>
-        <p class="small"><strong>Backup:</strong> Sarath · <strong>Night before:</strong> confirm the quiz sheets + answer key are printed and in the car.</p>
-    </div>
-</div>
+  <section>
+    <h2>Returns in flight. None of them changes what anyone is paid.</h2>
 
-<div class="card" id="sandeep">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Sandeep — load-out <span class="badge muted">treasurer / tech</span></h4>
-        <p class="small"><strong>Arrive</strong> on-call at the desk (no setup row).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> none you haul.</p>
-        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The <code>[ZELLE ADDRESS]</code> walk-in sign</label></li>
-        </ul>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The <code>[ZELLE ADDRESS]</code> walk-in sign (you print it) <span class="badge important">confirm you or Swathi carries it to the desk</span></label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> The Polaroid camera pack <span class="badge important">orphan — confirm you vs Aathira carries it from the 9/10 delivery</span></label></li>
-        </ul>
-        <p class="small"><strong>Friday pack night:</strong> hand your 5-gal dispenser to Sreenivas (<strong>not in your Saturday car</strong>).</p>
-        <p class="small"><strong>Backup:</strong> <span class="badge muted">no deputy — cover is the group</span> · <strong>Night before:</strong> confirm the camera path, and that the <code>[ZELLE ADDRESS]</code> sign is printed.</p>
+    <div class="callout warning">
+      <div class="callout-title">Not deducted from any figure above</div>
+      <p>A return that has not been credited is not money anyone has. Until the refund lands back
+      in the buyer's own account, they are still out of pocket for it, and they get paid in full.
+      When a credit posts it enters the ledger as its own dated negative row, and that person's
+      payment drops <em>then</em> — not now. This is the policy, not an oversight.</p>
     </div>
-</div>
 
-<div class="card" id="jane">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Jane — load-out <span class="badge muted">kids' zone</span></h4>
-        <p class="small"><strong>Arrive</strong> before 11:00 (kids' corner opens 11:00, Area 1).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> none — the main attraction rides Cherian.</p>
-        <p class="small"><strong>🖨 Your print job — print week, by Wed Sept 9:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Bay Area–theme coloring pages, ~30–50 — source/design the line-art (Golden Gate, etc.), print, and bring them</label></li>
-        </ul>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Lemons + spoons (lemon-and-spoon race)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Kids' cones</label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> the $43.93 carnival games set, crayons/colored pencils, bubble supplies — all Cherian's car; the face painter (a booked service). <strong>Furniture is Logistics' job, not yours:</strong> 2 tables from John Paul's load, placed by 10:30 — one for face painting, one standing in for the bench (confirmed — your table works fine there); 2 chairs gathered from arriving attendees after 11:00.</p>
-        <p class="small"><strong>Backup:</strong> Meenu (PM blocks only — the AM kids' block still needs a rostered pair) · <strong>Night before:</strong> confirm the lemons + spoons + cones, and that the coloring pages are printed and in the car.</p>
+    <div class="table-wrap">
+      <table class="compact striped">
+        <thead><tr><th>Item</th><th>Bought by</th><th class="num">Value</th><th>Status</th><th class="num">Effect on payout</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Amazon serving-line Clorox wipes</td><td>Cherian</td>
+            <td class="num">$3.99 <span class="badge muted">unresolved</span></td>
+            <td>Moot — the Costco case it replaced went back on the 13th</td>
+            <td class="num pay-fig">$0.00</td>
+          </tr>
+          <tr>
+            <td>Amazon desk flushable wipes</td><td>Cherian</td>
+            <td class="num">$4.77</td>
+            <td>Cleared to return; not yet sent</td>
+            <td class="num pay-fig">$0.00</td>
+          </tr>
+          <tr>
+            <td>Garden-flag anti-wind clips</td><td>Cherian</td>
+            <td class="num">$5.99</td>
+            <td>On hold — the clamp check that releases it was never written down</td>
+            <td class="num pay-fig">$0.00</td>
+          </tr>
+          <tr>
+            <td>Unused Instax film packs</td><td>Aathira</td>
+            <td class="num">unknown <span class="badge outline">not counted</span></td>
+            <td>Packs were never counted after the event</td>
+            <td class="num pay-fig">$0.00</td>
+          </tr>
+          <tr>
+            <td>Surplus Trader Joe's pineapple juice</td><td>Mahesh</td>
+            <td class="num">$53.91</td>
+            <td>Bought twice by two people; return not yet decided</td>
+            <td class="num pay-fig">$0.00</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><th>Total in flight</th><th></th><th class="num">$68.66 + unknown</th><th>Nothing posted</th><th class="num pay-fig">$0.00</th></tr>
+        </tfoot>
+      </table>
     </div>
-</div>
 
-<div class="card" id="sarath">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>Sarath — load-out <span class="badge muted">program / photos</span></h4>
-        <p class="small"><strong>Arrive</strong> by ~11:30 — you gather the crowd for the 11:45 welcome (not 1:00).</p>
-        <p class="small"><strong>⚠ No backup if forgotten:</strong> none.</p>
-        <p class="small"><strong>In your car — Saturday:</strong></p>
-        <ul class="checklist">
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> Reels-counter props only (the backdrop banner + stand are Aathira's)</label></li>
-            <li><label><input tabindex="-1" onclick="return false" type="checkbox"> <strong>Your cooler</strong> — lent to the fleet (Sept 7). You arrive ~11:30, so it takes an afternoon job (ice cream or spare), not a morning one</label></li>
-        </ul>
-        <p class="small"><strong>Not yours:</strong> the handbell (Cherian's car); the reels backdrop banner + stand (Aathira's).</p>
-        <p class="small"><strong>Backup:</strong> you <em>are</em> Anjana's deputy · <strong>Night before:</strong> — .</p>
-    </div>
-</div>
+    <h3>Payable on request — Aathira's backdrop stand</h3>
+    <p>Her Extra Thick Backdrop Stand ($97.99) is deliberately not a ledger row. Two identical
+    stands were at the event — hers, and a duplicate already inside Cherian's main Amazon order —
+    and the plan was for both to go back, netting to zero. <strong>If she confirms she kept hers
+    and Cherian's went back instead, the committee owes her $97.99</strong> and it becomes a real
+    ledger row that day. Until she says so, it is not in her $245.69
+    and not in the $2,248.90 above.</p>
+  </section>
 
-<div class="card" id="external-carriers">
-    <div class="card-body">
-        <button class="copy-img" type="button" aria-label="Copy image" title="Copy image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="14" height="14" rx="2"/><path d="M8 20h12a2 2 0 0 0 2-2V8"/></svg></button>
-        <h4>External carriers &amp; open items <span class="badge important">needs Cherian's call</span></h4>
-        <p class="small">Not part of the core team, but they still physically carry things — and a few items still have no owner.</p>
-        <ul>
-            <li><strong>⚠ Bharath</strong> — Area 1 permit card <strong>R3421</strong>: post it 8:00–8:30, keep the receipt on-site all day (it's what legally holds the site).</li>
-            <li><strong>⚠ Renso</strong> — Area 4 permit card <strong>R3420</strong>: same. <strong>Also arrives 10:30 to help Sreenivas raise canopy #1</strong> over the registration desk (Sept 11: back to 10:30 with the setup move) — two slots on the day, 8:00–8:30 and 10:30.</li>
-            <li><strong>Sachin</strong> — the volleyball portable net + parts (he referees the 2:15 block).</li>
-            <li><strong>Joby Babu</strong> <span class="badge important">Arrival TBC</span> — new lender as of Sept 7, one cooler, self-delivered. Not otherwise in these docs; ask him what time he arrives so his cooler can be given a job.</li>
-            <li><strong>Aneesh</strong> <span class="badge nice">Confirmed</span> — Sandeep's brother-in-law, not a group member; one cooler, collected by Sandeep Pillai D-2 (Thu Sept 10).</li>
-            <li><strong>John Paul Varkey</strong> — <strong>also collects the Domino's pizza at 12:15</strong>: leave ~11:55, be at Domino's #8194, 992 W El Camino Real by 12:10, back on site ~12:30. Kevin already paid ($98.10, order #41) and emailed him the receipt to show. His 10:30 drop-off is done by then and he has no other rostered duty, so the window is clear. Brings <strong>1 pop-up canopy + 4 tables (his own 2 + the 2 free church tables) + 1 cooler</strong> to site by <strong>10:30</strong> (tables changed Sept 7 from a Friday collection to a Saturday bring — so the 10:00 crew has only Aathira's 2 church tables until he arrives). <strong>All 4 stay allocated within Area 1's cap — 2 to Jane's kids' zone, 2 to Area 4's food tables — and the desk + reels counter now stay permanently on Area 1 built-ins rather than moving onto a brought table (Sreenivas picks which physical pair is which).</strong> Canopy #2 goes over the food tables, Area 4; Sreenivas raises it. The caterer doesn't arrive until 11:30 and lunch isn't served until 12:15, so a late canopy costs nothing. Weights <span class="badge important">TBC</span>.</li>
-        </ul>
-        <p class="small"><strong>UNASSIGNED — needs a call:</strong> who carries the Polaroid camera to site (Sandeep or Aathira?); who carries the <code>[ZELLE ADDRESS]</code> sign to the desk; <strong>watermelon</strong> — the Sept 2 food update re-lists it (cut on-site, kept on ice) + a "watermelon crew", but it was dropped Aug 25 — in or out, and whose buy?</p>
+  <section>
+    <h2>Why the $500 catering advance is not in the payout</h2>
+    <p>Two different kinds of money run through this ledger. Most rows are a committee member
+    spending their own money and waiting to be paid back — those are reimbursements, and they are
+    what this page settles. The catering advance is the other kind: the treasurer handing over
+    $500 of registration money the committee had <em>already collected</em>, as a cash advance to
+    the caterer.</p>
+    <p>That money never left anyone's personal account. There is nothing to pay back. It is a real
+    expense of the event and it belongs in the budget — but not in a document about who gets a
+    transfer. <strong>Adding it would inflate the payout to $2,748.90.</strong></p>
+  </section>
+
+  <section>
+    <h2>Proof the total is right</h2>
+    <p>The figure above is not asserted, it is derived. Here it is reached two independent ways,
+    ending where a reconciliation should end.</p>
+
+    <div class="stat-ledger">
+      <div><span class="ledger-label">All 34 ledger rows, gross of refunds</span><span class="ledger-leader"></span><span class="ledger-fig">$2,867.12</span></div>
+      <div><span class="ledger-label">Less refunds posted</span><span class="ledger-leader"></span><span class="ledger-fig">−$118.22</span></div>
+      <div><span class="ledger-label">Ledger net</span><span class="ledger-leader"></span><span class="ledger-fig">$2,748.90</span></div>
+      <div><span class="ledger-label">Less the catering advance (paid from collected funds)</span><span class="ledger-leader"></span><span class="ledger-fig">−$500.00</span></div>
+      <div><span class="ledger-label"><strong>Reimbursable</strong></span><span class="ledger-leader"></span><span class="ledger-fig"><strong>$2,248.90</strong></span></div>
+      <div><span class="ledger-label">Sum of the 8 payments above</span><span class="ledger-leader"></span><span class="ledger-fig">$2,248.90</span></div>
+      <div><span class="ledger-label"><strong>Difference</strong></span><span class="ledger-leader"></span><span class="ledger-fig"><strong>$0.00</strong></span></div>
     </div>
-</div>
-</section>
-<p class="small" style="padding:0 1.25rem 2rem"><a href="./index.html">What we bought</a> &middot; <a href="./settlement.html">Who gets paid what</a></p>
+
+    <p><strong>Completeness.</strong> 34 rows, numbered 1 to 34 with no gaps and none
+    voided. Every row is either inside one of the 8 payments above or named here as an
+    exclusion. Exactly 1 row is excluded.</p>
+
+    <p><strong>Receipt coverage.</strong> 34 of 34 rows have a receipt on
+    file — complete. Treasurer policy is no receipt, no
+    reimbursement, and no payment here is being made on trust.</p>
+
+    <p><strong>Cut-off.</strong> The ledger was read at September 13, 2026 at 10:27 PM. Anything spent or refunded after
+    that moment is not on this page and belongs to the next version of it.</p>
+
+    <p><strong>Basis.</strong> Cash basis, US dollars, amounts as actually charged — tax, shipping
+    and bottle deposits included. One basis throughout; no row is carried pre-tax.</p>
+
+    <p><strong>Related party.</strong> The treasurer is also a payee, for $59.18
+    (the camera rental). That row should be checked and released by someone other than him.</p>
+
+    <p><strong>Scope.</strong> This is a record of what people spent and are owed. Registration
+    income and the park permits sit outside it, so no cash-on-hand or surplus figure can be read
+    off this page.</p>
+
+    <p><strong>If your figure looks wrong</strong>, quote the row number from the appendix. A
+    correction is made by adding a row, never by editing one.</p>
+  </section>
+
+  <section>
+    <h2>What is not yet known</h2>
+    <p>Three things are genuinely open. Naming them is what makes the $2,248.90 credible.</p>
+    <ul>
+      <li>The unused Instax film packs <strong>were never counted</strong>, so the refund due on
+      them cannot even be estimated.</li>
+      <li>The clamp check that decides whether the garden-flag clips go back <strong>happened, but
+      its result was never written down</strong>.</li>
+      <li>Pineapple juice was bought twice by two different people about ninety minutes apart —
+      roughly double what the station needed. Both amounts stand as paid and
+      <strong>neither buyer did anything wrong</strong>; whether the surplus goes back is still an
+      open decision.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Appendix — the full ledger</h1>
+    <p class="small">Every row, in order. Order numbers and receipt filenames are deliberately not
+    published here; they are in the ledger itself.</p>
+    <div class="table-wrap">
+      <table class="compact striped">
+        <thead><tr><th>#</th><th>Date</th><th>Paid by</th><th>Where</th><th>For</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Aug 17</td><td>Cherian</td><td>GotPrint</td><td>Banner</td><td class="num">$42.47</td></tr>
+          <tr><td>2</td><td>Aug 26</td><td>Anjana</td><td>Custom Ink</td><td>Apparel</td><td class="num">$48.50</td></tr>
+          <tr><td>3</td><td>Aug 25</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$462.03</td></tr>
+          <tr><td>4</td><td>Aug 25</td><td>Cherian</td><td>Amazon</td><td>Food</td><td class="num">$29.68</td></tr>
+          <tr><td>5</td><td>Aug 26</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$15.93</td></tr>
+          <tr><td>6</td><td>Aug 26</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$12.21</td></tr>
+          <tr><td>7</td><td>Aug 26</td><td>Cherian</td><td>Amazon</td><td>Supplies (kids' zone)</td><td class="num">$33.96</td></tr>
+          <tr><td>8</td><td>Aug 28</td><td>Sandeep</td><td>Lensrentals.com</td><td>Attractions</td><td class="num">$59.18</td></tr>
+          <tr><td>9</td><td>Aug 30</td><td>Aathira</td><td>(designer/print vendor)</td><td>Attractions</td><td class="num">$131.67</td></tr>
+          <tr><td>10</td><td>Aug 30</td><td>Aathira</td><td>Amazon</td><td>Attractions</td><td class="num">$96.05</td></tr>
+          <tr><td>11</td><td>Aug 31</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$10.99</td></tr>
+          <tr><td>12</td><td>Aug 31</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$8.44</td></tr>
+          <tr><td>13</td><td>Aug 31</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$61.52</td></tr>
+          <tr><td>14</td><td>Sept 4</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$29.47</td></tr>
+          <tr><td>15</td><td>Sept 5</td><td>Sandeep <span class="badge muted">event funds</span></td><td>Calicut Methods</td><td>Catering</td><td class="num">$500.00</td></tr>
+          <tr><td>16</td><td>Sept 6</td><td>Cherian</td><td>Amazon</td><td>Supplies</td><td class="num">$19.44</td></tr>
+          <tr><td>17</td><td>Sept 6</td><td>Cherian</td><td>Costco</td><td>Supplies</td><td class="num">$155.75</td></tr>
+          <tr><td>18</td><td>Sept 8</td><td>Cherian</td><td>Costco</td><td>Supplies</td><td class="num">$208.89</td></tr>
+          <tr><td>19</td><td>Sept 8</td><td>Cherian</td><td>Costco</td><td>Supplies</td><td class="num">$56.24</td></tr>
+          <tr><td>20</td><td>Sept 3</td><td>Aathira</td><td>Amazon</td><td>Games gear + prizes</td><td class="num">$11.67</td></tr>
+          <tr><td>21</td><td>Sept 8</td><td>Cherian</td><td>Amazon</td><td>Kids' stations</td><td class="num">$10.95</td></tr>
+          <tr><td>22</td><td>Sept 10</td><td>Aathira</td><td>FedEx Office</td><td>Games gear + prizes</td><td class="num">$6.30</td></tr>
+          <tr><td>23</td><td>Sept 10</td><td>Swathi</td><td>E-Z Mail (print shop, San Jose)</td><td>Roster/quiz printing</td><td class="num">$15.50</td></tr>
+          <tr><td>24</td><td>Sept 11</td><td>Kevin</td><td>Domino's</td><td>Pizza</td><td class="num">$98.10</td></tr>
+          <tr><td>25</td><td>Sept 11</td><td>Jitesh</td><td>Walmart (Fremont, 44009 Osgood Rd)</td><td>Mocktail station</td><td class="num">$72.38</td></tr>
+          <tr><td>26</td><td>Sept 11</td><td>Jitesh</td><td>Walmart (Milpitas, 301 Ranch Dr)</td><td>Supplies</td><td class="num">$14.64</td></tr>
+          <tr><td>27</td><td>Sept 10</td><td>Mahesh</td><td>Costco (Newark #1660)</td><td>Mocktail station</td><td class="num">$177.66</td></tr>
+          <tr><td>28</td><td>Sept 11</td><td>Mahesh</td><td>Trader Joe's (Fremont #0077)</td><td>Mocktail station</td><td class="num">$53.91</td></tr>
+          <tr><td>29</td><td>Sept 11</td><td>Swathi</td><td>E-Z Mail (print shop, San Jose)</td><td>Roster/quiz printing</td><td class="num">$5.00</td></tr>
+          <tr><td>30</td><td>Sept 13</td><td>Cherian</td><td>Costco (Santa Clara #129)</td><td>Costco</td><td class="num">−$75.01</td></tr>
+          <tr><td>31</td><td>Sept 12</td><td>Jitesh</td><td>Costco (Fremont #778, self-checkout)</td><td>Ice</td><td class="num">$23.09</td></tr>
+          <tr><td>32</td><td>Sept 12</td><td>Jitesh</td><td>Costco (Sunnyvale #423)</td><td>Ice</td><td class="num">$26.81</td></tr>
+          <tr><td>33</td><td>Sept 12</td><td>Jitesh</td><td>Costco (San Jose BCTR #848)</td><td>Ice cream + Mocktail station</td><td class="num">$368.69</td></tr>
+          <tr><td>34</td><td>Sept 13</td><td>Jitesh</td><td>Costco (Newark #1660)</td><td>Mocktail station</td><td class="num">−$43.21</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-note">Generated from the expense ledger on September 13, 2026 at 10:27 PM — every figure on this
+    page is computed from it, none is transcribed. build 6c3ad01637</p>
+  </footer>
+
 </article>
-<script>
-// ---- Copy-ticket-as-image: clone → inline computed styles → SVG foreignObject → canvas → PNG ----
-// iA Writer Quattro loads from jsDelivr; an SVG-as-image can't fetch external fonts, so the woff2s
-// the ticket uses are fetched once, base64'd, and embedded in the SVG (offline → system-mono fallback).
-const TICKET_FONTS = [
-  ['normal',400,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-normal.woff2'],
-  ['italic',400,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-400-italic.woff2'],
-  ['normal',700,'https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-quattro@latest/latin-700-normal.woff2'],
-];
-let ticketFontCss = null;
-async function buildTicketFontCss(){
-  if(ticketFontCss !== null) return ticketFontCss;
-  try {
-    const rules = await Promise.all(TICKET_FONTS.map(async ([style,weight,url])=>{
-      const bytes = new Uint8Array(await (await fetch(url)).arrayBuffer());
-      let bin='';
-      for(let i=0;i<bytes.length;i+=0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i,i+0x8000));
-      return `@font-face{font-family:'iA Writer Quattro';font-style:${style};font-weight:${weight};src:url(data:font/woff2;base64,${btoa(bin)}) format('woff2');}`;
-    }));
-    ticketFontCss = rules.join('');
-  } catch(e){ ticketFontCss = ''; }
-  return ticketFontCss;
-}
-// nodeToBlob(el, {remove, cleanup}): clone -> inline computed styles -> SVG foreignObject -> canvas -> PNG.
-// remove: CSS selector of elements to strip from the clone (buttons). cleanup: optional (clone)=>void
-// for section-specific tidy-up (procurement strips controls + normalizes full-bleed width).
-// Any closed <details> in el are force-opened before the clone is taken, and restored right after —
-// the open/clone/serialize sequence stays fully synchronous so a render() re-render mid-capture can't
-// swap the (still-open) generated <details> out from under it.
-async function nodeToBlob(el, { remove='.sl-copy,.copy-img', cleanup } = {}){
-  await document.fonts.ready;
-  const fontCss = await buildTicketFontCss();
-  const closed = [...el.querySelectorAll('details')].filter(d=>!d.open);
-  closed.forEach(d=>d.open=true);
-  let svg, w, h;
-  try {
-    const rect = el.getBoundingClientRect();
-    const PAD = 8, tw = Math.ceil(rect.width);
-    const clone = el.cloneNode(true);
-    // Pair BEFORE removing/cleaning up — identical trees guarantee index alignment.
-    const orig = [el, ...el.querySelectorAll('*')];
-    const dupe = [clone, ...clone.querySelectorAll('*')];
-    orig.forEach((node,i)=>{
-      const cs = getComputedStyle(node), st = dupe[i].style;
-      for(const p of cs) st.setProperty(p, cs.getPropertyValue(p));
-    });
-    clone.querySelectorAll(remove).forEach(n=>n.remove());
-    if(cleanup) cleanup(clone);
-    clone.style.margin='0';
-    // Removed content (buttons, cleaned-up rows) shrinks the clone vs. the live node — measure off-screen.
-    const meas = document.createElement('div');
-    meas.style.cssText = 'position:fixed;left:-10000px;top:0;';
-    meas.appendChild(clone);
-    document.body.appendChild(meas);
-    const th = Math.ceil(clone.getBoundingClientRect().height);
-    meas.remove();
-    w = tw + 2*PAD; h = th + 2*PAD;
-    const xhtml = new XMLSerializer().serializeToString(clone);
-    svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">`
-      + (fontCss?`<style>${fontCss}</style>`:'')
-      + `<foreignObject x="${PAD}" y="${PAD}" width="${tw}" height="${th}">${xhtml}</foreignObject></svg>`;
-  } finally {
-    closed.forEach(d=>d.open=false);
-  }
-  const img = new Image();
-  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-  await img.decode();
-  const canvas = document.createElement('canvas');
-  // Cap total pixel area (browsers, notably Safari, refuse oversized canvases) — tall sections like the
-  // procurement planner scale down from 2x toward 1x instead of failing; small cards stay at a crisp 2x.
-  const scale = Math.min(2, Math.sqrt(16000000 / (w*h))) || 1;
-  canvas.width = w*scale; canvas.height = h*scale;
-  const ctx = canvas.getContext('2d');
-  ctx.scale(scale,scale); ctx.fillStyle='#fff'; ctx.fillRect(0,0,w,h);
-  ctx.drawImage(img,0,0);
-  return await new Promise((res,rej)=>canvas.toBlob(b=>b?res(b):rej(new Error('toBlob failed')),'image/png'));
-}
-
-function flashCopyBtn(btn, text){
-  // innerHTML, not textContent — the idle state is now an <svg> icon, not a text node; textContent
-  // would read as '' and restoring via textContent would wipe the icon after the first flash.
-  const orig = btn.dataset.label ?? (btn.dataset.label = btn.innerHTML);
-  btn.innerHTML = text;
-  setTimeout(()=>{ btn.innerHTML = orig; btn.disabled = false; }, 1600);
-}
-function slugify(text){
-  const s = text.replace(/\s*[·§].*$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
-  return s || 'section';
-}
-async function copyBlob(btn, blobPromise, filename){
-  btn.disabled = true;
-  try {
-    // write() called before any await so the user-activation window is still open (Safari is strict);
-    // ClipboardItem accepts a Promise<Blob>.
-    await navigator.clipboard.write([new ClipboardItem({'image/png': blobPromise})]);
-    flashCopyBtn(btn, 'Copied ✓');
-  } catch(e) {
-    try {
-      const blob = await blobPromise;
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = filename;
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(()=>URL.revokeObjectURL(a.href), 10000);
-      flashCopyBtn(btn, 'Saved ↓');
-    } catch(e2) { flashCopyBtn(btn, 'Failed'); }
-  }
-}
-
-
-document.querySelectorAll('.copy-img').forEach(btn => btn.addEventListener('click', () => {
-  const card = btn.closest('.card');
-  copyBlob(btn, nodeToBlob(card), slugify(card.querySelector('h4')?.textContent || 'card') + '.png');
-}));
-</script>
+</main>
 </body>
 </html>
